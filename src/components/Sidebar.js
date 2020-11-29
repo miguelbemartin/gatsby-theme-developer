@@ -13,7 +13,11 @@ const availableAuthorLinks = [
 export default ({ title, description, links, author }) =>
     <>
         <header>
-            <h1>{title}</h1>
+            <Link
+                to={"/"}
+                title={title}>
+                <h1>{title}</h1>
+            </Link>
             <p>{description}</p>
         </header>
 
@@ -31,9 +35,9 @@ export default ({ title, description, links, author }) =>
         <p className={"authorLinks"}>
             {availableAuthorLinks.map((link) =>
                 author.links[link.key] &&
-                    <Link key={link.key}
-                          to={author.links[link.key]}
-                          title={link.key}>{link.icon}</Link>
+                    <a key={link.key}
+                          href={author.links[link.key]}
+                          title={link.key}>{link.icon}</a>
             )}
         </p>
     </>

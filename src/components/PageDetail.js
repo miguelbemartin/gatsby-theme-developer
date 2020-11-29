@@ -1,5 +1,4 @@
 import React from 'react';
-import moment from "moment";
 
 export default ({ title, content }) =>
     <article className={"page detail"}>

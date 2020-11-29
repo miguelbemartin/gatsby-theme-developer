@@ -1,14 +1,10 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import "../styles/main.scss"
+import Meta from "./Meta";
 
 const Layout = ({ children, title, description, strings }) => (
     <div className={"container detail"}>
-        <Helmet>
-            <title>{title}</title>
-            <meta name="description" content={description} />
-            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-        </Helmet>
+        <Meta title={title} description={description}/>
 
         <section className="back">
             <a className={"btn btn-light btn-sm"} href={"/"} title={title}>{strings.back}</a>

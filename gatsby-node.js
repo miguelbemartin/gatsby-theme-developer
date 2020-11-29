@@ -1,6 +1,6 @@
-const path = require("path")
 const config = require("./config.js")
 const strings = require("./strings.js")
+const fs = require("fs")
 
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions;
@@ -28,7 +28,7 @@ exports.createPages = async ({ graphql, actions }) => {
         if (edge.node.frontmatter.template === 'page') {
             createPage({
                 path: edge.node.frontmatter.slug,
-                component: path.resolve('./src/templates/page-detail.js'),
+                component: require.resolve('./src/templates/page-detail.js'),
                 context: {
                     slug: edge.node.frontmatter.slug,
                     strings: stringsToContext,
@@ -39,7 +39,7 @@ exports.createPages = async ({ graphql, actions }) => {
         } else if (edge.node.frontmatter.template === 'post') {
             createPage({
                 path: edge.node.frontmatter.slug,
-                component: path.resolve('./src/templates/article-detail.js'),
+                component: require.resolve('./src/templates/article-detail.js'),
                 context: {
                     slug: edge.node.frontmatter.slug,
                     strings: stringsToContext
@@ -53,7 +53,7 @@ exports.createPages = async ({ graphql, actions }) => {
     for (let i = 0; i < numPages; i += 1) {
         createPage({
             path: i === 0 ? '/' : `/page/${i}`,
-            component: path.resolve('./src/templates/article-archive.js'),
+            component: require.resolve('./src/templates/article-archive.js'),
             context: {
                 currentPage: i,
                 postsLimit: config.articles_per_page,
@@ -69,4 +69,14 @@ exports.createPages = async ({ graphql, actions }) => {
         });
     }
 
+};
+
+exports.onPreBootstrap = ({ reporter }) => {
+    const dirs = ["content", "static", "static/media"];
+    dirs.forEach(dir => {
+        if (!fs.existsSync(dir)) {
+            reporter.info(`creating the ${dir} directory`)
+            fs.mkdirSync(dir)
+        }
+    });
 };

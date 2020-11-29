@@ -90,8 +90,17 @@ $space: $spacer*5;
 
 aside {
   margin: $space 0;
-  h1{
-    font-size: $font-size-base*1.2;
+  header a{
+    color: $black;
+    h1{
+      font-size: $font-size-base*1.2;
+    }
+  }
+  .nav a:hover, header a:hover{
+    color: $gray-600;
+  }
+  header a:hover{
+    text-decoration: none;
   }
   p{
     margin: 0 0 $paragraph-margin-bottom/3 0;
@@ -119,6 +128,7 @@ aside {
       color: $black;
       display: inline-block;
       margin-left: 0.4rem;
+      margin-top: 0.2rem;
     }
   }
 }
@@ -130,6 +140,22 @@ aside {
 article.article.detail, article.page.detail{
   h2,h3,h4,h5{
     margin-top: $space/2;
+  }
+  table{
+    width: 100%;
+    margin-bottom: $paragraph-margin-bottom*2;
+    border: 1px solid $gray-300;
+    th, td{
+      padding: 0.4rem;
+    }
+    tr{
+      border: 1px solid $gray-300;
+    }
+    thead{
+      th{
+        background-color: $gray-200;
+      }
+    }
   }
   blockquote{
     margin: $paragraph-margin-bottom*2;

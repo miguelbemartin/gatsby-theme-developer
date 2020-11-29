@@ -11,7 +11,6 @@ const PageTemplate = ({ data, pageContext }) => {
     } = data.site.siteMetadata;
 
     const {
-        strings,
         links,
         author,
     } = pageContext;
