@@ -1,4 +1,3 @@
-const config = require("./config.js")
 const strings = require("./strings.js")
 const fs = require("fs")
 
@@ -7,9 +6,27 @@ exports.createPages = async ({ graphql, actions }) => {
 
     const result = await graphql(`
     {
-      allMarkdownRemark(
-        filter: { frontmatter: { draft: { ne: true } } }
-      ) {
+        site {
+          siteMetadata {
+            title
+            description
+            language
+            author {
+              links {
+                twitter
+                linkedin 
+                mail 
+                github
+                instagram
+              }
+            }
+            links {
+              title
+              href
+            }
+          }
+        }
+        allMarkdownRemark(filter: { frontmatter: { draft: { ne: true } } }) {
         totalCount
         edges {
           node {
@@ -19,10 +36,17 @@ exports.createPages = async ({ graphql, actions }) => {
             }
           }
         }
-      }
+       }
     }`);
 
-    const stringsToContext = strings[config.language] ? strings[config.language] : strings["en"];
+    const {
+        language,
+        articles_per_page,
+        author,
+        links
+    } = result.data.site.siteMetadata;
+
+    const stringsToContext = strings[language] ? strings[language] : strings["en"];
 
     result.data.allMarkdownRemark.edges.forEach( edge => {
         if (edge.node.frontmatter.template === 'page') {
@@ -32,8 +56,8 @@ exports.createPages = async ({ graphql, actions }) => {
                 context: {
                     slug: edge.node.frontmatter.slug,
                     strings: stringsToContext,
-                    author: config.author,
-                    links: config.links
+                    author: author,
+                    links: links
                 }
             });
         } else if (edge.node.frontmatter.template === 'post') {
@@ -48,7 +72,7 @@ exports.createPages = async ({ graphql, actions }) => {
         }
     })
 
-    const numPages = Math.ceil(result.data.allMarkdownRemark.totalCount / config.articles_per_page);
+    const numPages = Math.ceil(result.data.allMarkdownRemark.totalCount / articles_per_page);
 
     for (let i = 0; i < numPages; i += 1) {
         createPage({
@@ -56,15 +80,15 @@ exports.createPages = async ({ graphql, actions }) => {
             component: require.resolve('./src/templates/article-archive.js'),
             context: {
                 currentPage: i,
-                postsLimit: config.articles_per_page,
-                postsOffset: i * config.articles_per_page,
+                postsLimit: articles_per_page,
+                postsOffset: i * articles_per_page,
                 prevPagePath: i <= 1 ? '/' : `/page/${i - 1}`,
                 nextPagePath: `/page/${i + 1}`,
                 hasPrevPage: i !== 0,
                 hasNextPage: i !== numPages - 1,
                 strings: stringsToContext,
-                author: config.author,
-                links: config.links
+                author: author,
+                links: links
             }
         });
     }
