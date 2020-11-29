@@ -1,0 +1,37 @@
+{
+  "name": "gatsby-serenity-theme",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Asier Marqués <asiermarques@gmail.com> (@asiermarques)",
+  "license": "MIT",
+  "peerDependencies": {
+    "gatsby": "^2.27.4",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "gatsby-plugin-google-fonts": "^1.0.1",
+    "gatsby-plugin-react-helmet": "^3.5.0",
+    "gatsby-plugin-sass": "^2.6.0",
+    "gatsby-plugin-twitter": "^2.5.0",
+    "gatsby-remark-prismjs": "^3.8.0",
+    "gatsby-source-filesystem": "^2.6.1",
+    "gatsby-transformer-remark": "^2.11.1",
+    "moment": "^2.29.1",
+    "node-sass": "4.14.1",
+    "prismjs": "^1.22.0",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^4.1.0"
+  },
+  "devDependencies": {
+    "gatsby": "^2.27.4",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "clean": "gatsby clean",
+    "develop": "gatsby develop"
+  }
+}

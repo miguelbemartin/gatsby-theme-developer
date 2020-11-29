@@ -1,0 +1,235 @@
+// Color system
+
+$white:    #fff ;
+$gray-100: #f8f9fa ;
+$gray-200: #e9ecef ;
+$gray-300: #dee2e6 ;
+$gray-400: #ced4da ;
+$gray-500: #adb5bd ;
+$gray-600: #6c757d ;
+$gray-700: #495057 ;
+$gray-800: #343a40 ;
+$gray-900: #212529 ;
+$black:    #000 ;
+
+$grays: () ;
+$grays: map-merge(
+  (
+    "100": $gray-100,
+    "200": $gray-200,
+    "300": $gray-300,
+    "400": $gray-400,
+    "500": $gray-500,
+    "600": $gray-600,
+    "700": $gray-700,
+    "800": $gray-800,
+    "900": $gray-900
+  ),
+  $grays
+);
+
+$blue:    #007bff ;
+$indigo:  #6610f2 ;
+$purple:  #6f42c1 ;
+$pink:    #e83e8c ;
+$red:     #dc3545 ;
+$orange:  #fd7e14 ;
+$yellow:  #ffc107 ;
+$green:   #28a745 ;
+$teal:    #20c997 ;
+$cyan:    #17a2b8 ;
+
+$colors: () ;
+$colors: map-merge(
+  (
+    "blue":       $blue,
+    "indigo":     $indigo,
+    "purple":     $purple,
+    "pink":       $pink,
+    "red":        $red,
+    "orange":     $orange,
+    "yellow":     $yellow,
+    "green":      $green,
+    "teal":       $teal,
+    "cyan":       $cyan,
+    "white":      $white,
+    "gray":       $gray-600,
+    "gray-dark":  $gray-800
+  ),
+  $colors
+);
+
+
+$primary:       $blue;
+$secondary:     $gray-600;
+$success:       $green;
+$info:          $cyan;
+$warning:       $yellow;
+$danger:        $red;
+$light:         $gray-100;
+$dark:          $gray-800;
+
+$font-family-monospace: 'Merriweather', serif;
+$font-family-sans-serif: 'Fira Sans', sans-serif;
+$font-size-base: 1.2rem;
+
+$spacer: 1rem;
+$paragraph-margin-bottom: $spacer * 1.8;
+
+$h1-font-size:                $font-size-base * 2.5;
+$h2-font-size:                $font-size-base * 2;
+$h3-font-size:                $font-size-base * 1.45;
+$h4-font-size:                $font-size-base * 1.2;
+$h5-font-size:                $font-size-base;
+$h6-font-size:                $font-size-base;
+$headings-margin-bottom: $paragraph-margin-bottom/2;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+$space: $spacer*5;
+
+aside {
+  margin: $space 0;
+  h1{
+    font-size: $font-size-base*1.2;
+  }
+  p{
+    margin: 0 0 $paragraph-margin-bottom/3 0;
+    color: $gray-600;
+  }
+  p, .nav{
+    font-size: $font-size-base*0.8;
+  }
+  .nav{
+    li{
+      margin-bottom: $paragraph-margin-bottom/3;
+      a.nav-link{
+        color: $black;
+        padding: 0;
+        display: inline-block;
+      }
+      a.active{
+        border-bottom: 1px solid $black;
+      }
+    }
+  }
+  .authorLinks{
+    margin: $paragraph-margin-bottom/3 0 $paragraph-margin-bottom/2 0;
+    a{
+      color: $black;
+      display: inline-block;
+      margin-left: 0.4rem;
+    }
+  }
+}
+
+.back{
+  margin: $space/3 0;
+}
+
+article.article.detail, article.page.detail{
+  h2,h3,h4,h5{
+    margin-top: $space/2;
+  }
+  blockquote{
+    margin: $paragraph-margin-bottom*2;
+    text-align: center;
+    color: $gray-600;
+    font-size: $font-size-base*1.2;
+  }
+  img{
+    height: auto;
+  }
+  img, iframe ,.twitter-tweet.twitter-tweet-rendered{
+    max-width: 100%;
+    display: block;
+    margin: $paragraph-margin-bottom auto;
+  }
+  ol,ul {
+    margin-bottom: $paragraph-margin-bottom;
+    li {
+      margin-bottom: $paragraph-margin-bottom/2;
+    }
+  }
+  .gatsby-highlight-code-line {
+    background-color: #feb;
+    display: block;
+    margin-right: -1em;
+    margin-left: -1em;
+    padding-right: 1em;
+    padding-left: 0.75em;
+    border-left: 0.25em solid #f99;
+  }
+  /**
+ * Add back the container background-color, border-radius, padding, margin
+ * and overflow that we removed from <pre>.
+ */
+  .gatsby-highlight {
+    background-color: #000!important;
+    font-size: 0.9rem;
+    border-radius: 0.3em;
+    margin: 0.5em 0;
+    padding: 1em;
+    overflow: auto;
+  }
+
+  /**
+   * Remove the default PrismJS theme background-color, border-radius, margin,
+   * padding and overflow.
+   * 1. Make the element just wide enough to fit its content.
+   * 2. Always fill the visible space in .gatsby-highlight.
+   * 3. Adjust the position of the line numbers
+   */
+  .gatsby-highlight pre[class*="language-"] {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    overflow: initial;
+    float: left; /* 1 */
+    min-width: 100%; /* 2 */
+  }
+  /* Adjust the position of the line numbers */
+  .gatsby-highlight pre[class*="language-"].line-numbers {
+    padding-left: 2.8em;
+  }
+
+
+}
+
+article.article.detail {
+  margin: $space/6 0 $space 0;
+  header{
+    text-align: center;
+    margin-bottom: $space;
+  }
+}
+article.page.detail {
+  margin: $space 0;
+  header{
+    margin-bottom: $space/2;
+  }
+}
+
+.article-list{
+  article{
+    margin: $space 0;
+    .date{
+      color: $gray-600
+    }
+    a{
+      color: $black;
+    }
+  }
+  .pagination {
+    margin-bottom: $paragraph-margin-bottom;
+    a{
+      color: $black;
+    }
+    .next{
+      text-align: right;
+    }
+    .disabled {
+      display: none;
+    }
+  }
+}
