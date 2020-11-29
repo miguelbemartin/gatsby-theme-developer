@@ -11,6 +11,7 @@ exports.createPages = async ({ graphql, actions }) => {
             title
             description
             language
+            articles_per_page
             author {
               links {
                 twitter
