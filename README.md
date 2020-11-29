@@ -10,15 +10,40 @@ yarn init
 yarn add gatsby react react-dom gatsby-serenity-theme
 ```
 
-Then add the theme to your `gatsby-config.js`. We'll use the long-form
-here for educational purposes.
+Then add the theme to your `gatsby-config.js`. 
 
 ```javascript
 module.exports = {
   plugins: [
     {
       resolve: "gatsby-serenity-theme",
-      options: {},
+      options: {
+           title: "Serenity 平静",
+           description: "A minimal theme for your personal blog or webpage",
+           author: {
+             name: "Asier Marqués",
+             bio: "Software Engineer",
+             links: {
+                 twitter: "https://twitter.com/asiermarques",
+                 linkedin: "https://linkedin.com/in/asier",
+                 github: "https://github.com/asiermarques",
+                 instagram: "https://instagram.com/asiermarques",
+                 mail: ""
+             }
+           },
+           links: [
+               {
+                   title: "Articles",
+                   href: "/"
+               },
+               {
+                   title: "About me",
+                   href: "/info/about-me"
+               },
+           ],
+           articles_per_page: 4,
+           language: "en"
+       },
     },
   ],
 }
