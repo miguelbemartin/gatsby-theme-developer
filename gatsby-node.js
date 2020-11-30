@@ -66,9 +66,10 @@ exports.createPages = async ({ graphql, actions }) => {
 exports.onPreBootstrap = ({ store, reporter }) => {
     const { program } = store.getState()
     const contentPath = path.join(program.directory, "content");
+    const staticsPath = path.join(program.directory, "static");
     const dirs = [
-        path.join(program.directory, "content"),
-        path.join(program.directory, "static"),
+        contentPath,
+        staticsPath,
         path.join(program.directory, "static/media"),
     ]
     dirs.forEach(dir => {
@@ -78,12 +79,34 @@ exports.onPreBootstrap = ({ store, reporter }) => {
         }
     });
 
+    copyStaticAssets(staticsPath, reporter);
+
     const contentFiles = fs.readdirSync(contentPath).filter( (file) => path.extname(file) === ".md")
     if( contentFiles.length < 1) {
         reporter.log(`creating the default content in the ${contentPath} directory`);
         createDefaultContent(contentPath);
     }
 };
+
+function copyStaticAssets(staticsPath, reporter){
+    const assets = [
+        "android-chrome-192x192.png",
+        "android-chrome-512x512.png",
+        "apple-touch-icon.png",
+        "favicon.ico",
+        "favicon-16x16.png",
+        "favicon-32x32.png",
+        "site.webmanifest",
+    ];
+    assets.forEach(asset => {
+        const absAsset = path.join(staticsPath, asset);
+        if(!fs.existsSync(absAsset)) {
+            reporter.log(`creating the ${absAsset} archive`)
+            fs.copyFileSync(path.join("..","static_assets", asset), absAsset);
+        }
+    })
+}
+
 
 function createDefaultContent(contentDirectory) {
 
