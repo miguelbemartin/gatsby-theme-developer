@@ -78,7 +78,7 @@ exports.onPreBootstrap = ({ store, reporter }) => {
         }
     });
 
-    const contentFiles = fs.readdirSync(contentPath).filter( (dirent) => dirent.isFile())
+    const contentFiles = fs.readdirSync(contentPath).filter( (file) => path.extname(file) === ".md")
     if( contentFiles.length < 1) {
         reporter.log(`creating the default content in the ${contentPath} directory`);
         createDefaultContent(contentPath);
