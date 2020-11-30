@@ -1,4 +1,5 @@
-const fs = require("fs")
+const fs = require("fs");
+const path = require('path');
 
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions;
@@ -65,9 +66,9 @@ exports.createPages = async ({ graphql, actions }) => {
 exports.onPreBootstrap = ({ store, reporter }) => {
     const { program } = store.getState()
     const dirs = [
-        fs.path.join(program.directory, "content"),
-        fs.path.join(program.directory, "static"),
-        fs.path.join(program.directory, "static/media"),
+        path.join(program.directory, "content"),
+        path.join(program.directory, "static"),
+        path.join(program.directory, "static/media"),
     ]
     dirs.forEach(dir => {
         if (!fs.existsSync(dir)) {
