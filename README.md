@@ -1,5 +1,7 @@
 # Gatsby Theme Serenity
 
+[![Current npm package version.](https://img.shields.io/npm/v/gatsby-theme-serenity.svg)](https://www.npmjs.com/package/gatsby-theme-serenity)
+
 ## Quick Start
 
 ```shell
