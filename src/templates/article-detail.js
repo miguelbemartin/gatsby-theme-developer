@@ -2,33 +2,33 @@ import React from "react"
 import { graphql } from "gatsby"
 import LayoutArticle from "../components/LayoutArticle";
 import ArticleDetail from "../components/ArticleDetail";
+import useSiteMetadata from "../hooks/use-site-metadata";
+import useStrings from "../hooks/use-strings";
 
-const IndexTemplate = ({ data, pageContext }) => {
-
-    const site = data.site.siteMetadata;
+const IndexTemplate = ({ data }) => {
+    const {
+        title,
+        language
+    } = useSiteMetadata();
     const article = data.markdownRemark.frontmatter;
-    const strings = pageContext.strings;
+    const htmlContent = data.markdownRemark.html
+    const strings = useStrings(language);
 
     return <LayoutArticle
-            title={`${article.title} - ${site.title}`}
+            title={`${article.title} - ${title}`}
             description={article.description}
             strings={strings}>
             <ArticleDetail
                 title={article.title}
                 slug={article.slug}
                 date={article.date}
-                content={data.markdownRemark.html}/>
+                content={htmlContent}/>
         </LayoutArticle>
 }
 
 
 export const query = graphql`
-  query PostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
+  query ArticleBySlug($slug: String!) {
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       id
       html

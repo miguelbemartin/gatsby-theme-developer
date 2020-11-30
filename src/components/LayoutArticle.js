@@ -2,7 +2,7 @@ import React from 'react';
 import "../styles/main.scss"
 import Meta from "./Meta";
 
-const Layout = ({ children, title, description, strings }) => (
+export default ({ children, title, description, strings }) =>
     <div className={"container detail"}>
         <Meta title={title} description={description}/>
 
@@ -16,5 +16,3 @@ const Layout = ({ children, title, description, strings }) => (
             </div>
         </section>
     </div>
-);
-export default Layout

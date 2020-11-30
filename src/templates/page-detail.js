@@ -3,21 +3,18 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout";
 import PageDetail from "../components/PageDetail";
 import Sidebar from "../components/Sidebar";
+import useSiteMetadata from "../hooks/use-site-metadata";
 
 const PageTemplate = ({ data, pageContext }) => {
     const {
         title,
-        description
-    } = data.site.siteMetadata;
-
-    const {
-        links,
+        description,
         author,
-    } = pageContext;
-
+        links
+    } = useSiteMetadata();
 
     const page = data.markdownRemark.frontmatter;
-
+    const htmlContent = data.markdownRemark.html;
     const sidebar = <Sidebar
         title={title}
         description={description}
@@ -31,18 +28,12 @@ const PageTemplate = ({ data, pageContext }) => {
         <PageDetail title={page.title}
                     slug={page.slug}
                     date={page.date}
-                    content={data.markdownRemark.html}/>
+                    content={htmlContent}/>
     </Layout>
 }
 
 export const query = graphql`
   query PageBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-        description
-      }
-    }
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       id
       html

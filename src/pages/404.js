@@ -2,16 +2,18 @@ import React from "react"
 import Layout from "../components/Layout";
 import PageDetail from "../components/PageDetail";
 import Sidebar from "../components/Sidebar";
-import {graphql} from "gatsby";
+import useSiteMetadata from "../hooks/use-site-metadata";
+import useStrings from "../hooks/use-strings";
 
-const Page404 = ({data}) => {
+export default () => {
     const {
         title,
         description,
         author,
-        links
-    } = data.site.siteMetadata;
-
+        links,
+        language
+    } = useSiteMetadata();
+    const strings = useStrings(language);
     const sidebar = <Sidebar
         title={title}
         description={description}
@@ -19,36 +21,10 @@ const Page404 = ({data}) => {
         author={author}/>
 
     return <Layout sidebar={sidebar}
-        title={"Not found"}
-        description={"Content not found"}>
+        title={strings.not_found_title + " " + title}
+        description={strings.not_found_content}>
         <PageDetail
-            title={"404 Not found"}
-            content={"Content not found"}/>
+            title={strings.not_found_title}
+            content={strings.not_found_content}/>
     </Layout>
 }
-
-export const query = graphql`
-  query Page404 {
-    site {
-      siteMetadata {
-        title
-        description
-        author {
-          links {
-            twitter
-            linkedin 
-            mail 
-            github
-            instagram
-          }
-        }
-        links {
-          title
-          href
-        }
-      }
-    }
-  }
-`;
-
-export default Page404

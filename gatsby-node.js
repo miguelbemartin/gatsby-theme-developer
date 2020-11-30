@@ -1,4 +1,4 @@
-const strings = require("./strings.js")
+import useSiteMetadata from "./src/hooks/use-site-metadata";
 const fs = require("fs")
 
 exports.createPages = async ({ graphql, actions }) => {
@@ -6,59 +6,28 @@ exports.createPages = async ({ graphql, actions }) => {
 
     const result = await graphql(`
     {
-        site {
-          siteMetadata {
-            title
-            description
-            language
-            articles_per_page
-            author {
-              links {
-                twitter
-                linkedin 
-                mail 
-                github
-                instagram
-              }
-            }
-            links {
-              title
-              href
-            }
-          }
-        }
         allMarkdownRemark(filter: { frontmatter: { draft: { ne: true } } }) {
-        totalCount
-        edges {
-          node {
-            frontmatter {
-              template
-              slug
+            totalCount
+            edges {
+                node {
+                    frontmatter {
+                      template
+                      slug
+                    }
+                }
             }
-          }
-        }
        }
-    }`);
+    }
+    `);
 
-    const {
-        language,
-        articles_per_page,
-        author,
-        links
-    } = result.data.site.siteMetadata;
-
-    const stringsToContext = strings[language] ? strings[language] : strings["en"];
-
+    const {articles_per_page} = useSiteMetadata();
     result.data.allMarkdownRemark.edges.forEach( edge => {
         if (edge.node.frontmatter.template === 'page') {
             createPage({
                 path: edge.node.frontmatter.slug,
                 component: require.resolve('./src/templates/page-detail.js'),
                 context: {
-                    slug: edge.node.frontmatter.slug,
-                    strings: stringsToContext,
-                    author: author,
-                    links: links
+                    slug: edge.node.frontmatter.slug
                 }
             });
         } else if (edge.node.frontmatter.template === 'post') {
@@ -66,15 +35,13 @@ exports.createPages = async ({ graphql, actions }) => {
                 path: edge.node.frontmatter.slug,
                 component: require.resolve('./src/templates/article-detail.js'),
                 context: {
-                    slug: edge.node.frontmatter.slug,
-                    strings: stringsToContext
+                    slug: edge.node.frontmatter.slug
                 }
             });
         }
     })
 
     const numPages = Math.ceil(result.data.allMarkdownRemark.totalCount / articles_per_page);
-
     for (let i = 0; i < numPages; i += 1) {
         createPage({
             path: i === 0 ? '/' : `/page/${i}`,
@@ -86,22 +53,23 @@ exports.createPages = async ({ graphql, actions }) => {
                 prevPagePath: i <= 1 ? '/' : `/page/${i - 1}`,
                 nextPagePath: `/page/${i + 1}`,
                 hasPrevPage: i !== 0,
-                hasNextPage: i !== numPages - 1,
-                strings: stringsToContext,
-                author: author,
-                links: links
+                hasNextPage: i !== numPages - 1
             }
         });
     }
-
 };
 
-exports.onPreBootstrap = ({ reporter }) => {
-    const dirs = ["content", "static", "static/media"];
+exports.onPreBootstrap = ({ store, reporter }) => {
+    const { program } = store.getState()
+    const dirs = [
+        path.join(program.directory, "content"),
+        path.join(program.directory, "static"),
+        path.join(program.directory, "static/media"),
+    ]
     dirs.forEach(dir => {
         if (!fs.existsSync(dir)) {
-            reporter.info(`creating the ${dir} directory`)
+            reporter.log(`creating the ${dir} directory`)
             fs.mkdirSync(dir)
         }
-    });
+    })
 };

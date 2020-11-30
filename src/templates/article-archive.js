@@ -4,11 +4,13 @@ import ArticleInList from "../components/ArticleInList";
 import Pagination from "../components/Pagination";
 import Layout from "../components/Layout";
 import Sidebar from "../components/Sidebar";
+import useSiteMetadata from "../hooks/use-site-metadata";
+
 const IndexTemplate = ({ data, pageContext }) => {
     const {
         title,
         description
-    } = data.site.siteMetadata;
+    } = useSiteMetadata();
 
     const {
         strings,
@@ -50,13 +52,7 @@ const IndexTemplate = ({ data, pageContext }) => {
 }
 
 export const query = graphql`
-  query IndexTemplate($postsLimit: Int!, $postsOffset: Int!) {
-    site {
-      siteMetadata {
-        title
-        description
-      }
-    }
+  query ArticleArchive($postsLimit: Int!, $postsOffset: Int!) {
     allMarkdownRemark(
         limit: $postsLimit,
         skip: $postsOffset,

@@ -1,13 +1,17 @@
 import React from 'react';
-import moment from "moment";
+import useFormattedDate from "../hooks/use-formatted-date";
 
-export default ({ title, slug, date, content }) =>
-    <article className={"article detail"}>
+export default ({ title, date, content }) => {
+    const formattedDate = useFormattedDate(date, "DD-MM-YYYY");
+    
+    return <article className={"article detail"}>
         <header>
             <h1>{title}</h1>
             <time pubdate={"yes"}
-                dateTime={date}>{moment(date).format("DD-MM-YYYY")}</time>
+                  dateTime={date}>{formattedDate}</time>
         </header>
 
         <section dangerouslySetInnerHTML={{__html: content}}/>
     </article>
+}
+

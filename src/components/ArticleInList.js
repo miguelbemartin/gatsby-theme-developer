@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from "gatsby"
-import moment from "moment";
+import useFormattedDate from "../hooks/use-formatted-date";
 
-export default ({ title, slug, date, description }) =>
-    <article>
+export default ({ title, slug, date, description }) => {
+    const formattedDate = useFormattedDate(date, "DD-MM-YYYY");
+
+    return <article>
         <small className={"date"}>
             <time pubdate={"yes"}
-                  dateTime={date}>{moment(date).format("DD-MM-YYYY")}</time>
+                  dateTime={date}>{formattedDate}</time>
         </small>
         <Link title={title}
               to={slug}>
@@ -14,3 +16,5 @@ export default ({ title, slug, date, description }) =>
         </Link>
         <p>{description}</p>
     </article>
+}
+
