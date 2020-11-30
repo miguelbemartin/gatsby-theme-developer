@@ -1,4 +1,3 @@
-import useSiteMetadata from "./src/hooks/use-site-metadata";
 const fs = require("fs")
 
 exports.createPages = async ({ graphql, actions }) => {
@@ -6,6 +5,11 @@ exports.createPages = async ({ graphql, actions }) => {
 
     const result = await graphql(`
     {
+        site {
+            siteMetadata {
+                articles_per_page
+            }
+        }
         allMarkdownRemark(filter: { frontmatter: { draft: { ne: true } } }) {
             totalCount
             edges {
@@ -17,10 +21,9 @@ exports.createPages = async ({ graphql, actions }) => {
                 }
             }
        }
-    }
-    `);
+    }`);
 
-    const {articles_per_page} = useSiteMetadata();
+    const {articles_per_page} = result.data.site.siteMetadata;
     result.data.allMarkdownRemark.edges.forEach( edge => {
         if (edge.node.frontmatter.template === 'page') {
             createPage({
