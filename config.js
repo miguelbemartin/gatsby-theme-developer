@@ -18,8 +18,8 @@ module.exports = {
             href: "/"
         },
         {
-            title: "About me",
-            href: "/info/about-me"
+            title: "About",
+            href: "/about-me"
         },
     ],
     articles_per_page: 4,
