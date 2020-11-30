@@ -102,7 +102,7 @@ function copyStaticAssets(staticsPath, reporter){
         const absAsset = path.join(staticsPath, asset);
         if(!fs.existsSync(absAsset)) {
             reporter.log(`creating the ${absAsset} archive`)
-            fs.copyFileSync(path.join(".","static_assets", asset), absAsset);
+            fs.copyFileSync(path.join(__dirname,"static", asset), absAsset);
         }
     })
 }
