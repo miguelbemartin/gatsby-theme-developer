@@ -5,7 +5,7 @@ import PageDetail from "../components/PageDetail";
 import Sidebar from "../components/Sidebar";
 import useSiteMetadata from "../hooks/use-site-metadata";
 
-const PageTemplate = ({ data, pageContext }) => {
+const PageTemplate = ({ data }) => {
     const {
         title,
         description,

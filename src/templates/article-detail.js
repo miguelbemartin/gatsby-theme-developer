@@ -10,6 +10,7 @@ const IndexTemplate = ({ data }) => {
         title,
         language
     } = useSiteMetadata();
+
     const article = data.markdownRemark.frontmatter;
     const htmlContent = data.markdownRemark.html
     const strings = useStrings(language);

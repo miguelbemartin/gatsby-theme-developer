@@ -5,22 +5,25 @@ import Pagination from "../components/Pagination";
 import Layout from "../components/Layout";
 import Sidebar from "../components/Sidebar";
 import useSiteMetadata from "../hooks/use-site-metadata";
+import useStrings from "../hooks/use-strings";
 
 const IndexTemplate = ({ data, pageContext }) => {
     const {
         title,
-        description
+        description,
+        links,
+        author,
+        language,
     } = useSiteMetadata();
 
     const {
-        strings,
-        links,
-        author,
         hasNextPage,
         hasPrevPage,
         prevPagePath,
         nextPagePath
     } = pageContext;
+
+    const strings = useStrings(language);
 
     const sidebar = <Sidebar
         title={title}
