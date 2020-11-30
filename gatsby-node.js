@@ -65,9 +65,9 @@ exports.createPages = async ({ graphql, actions }) => {
 exports.onPreBootstrap = ({ store, reporter }) => {
     const { program } = store.getState()
     const dirs = [
-        path.join(program.directory, "content"),
-        path.join(program.directory, "static"),
-        path.join(program.directory, "static/media"),
+        fs.path.join(program.directory, "content"),
+        fs.path.join(program.directory, "static"),
+        fs.path.join(program.directory, "static/media"),
     ]
     dirs.forEach(dir => {
         if (!fs.existsSync(dir)) {
