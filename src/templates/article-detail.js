@@ -17,8 +17,8 @@ const IndexTemplate = ({ data }) => {
     const strings = useStrings(language);
 
     return <LayoutArticle
-            title={`${article.title} - ${title}`}
-            description={article.description ? article.description : description}
+            metaTitle={`${article.title} - ${title}`}
+            metaDescription={article.description ? article.description : description}
             strings={strings}
             metaUrlPath={article.slug}
             metaPreviewImage={article.coverImage}>

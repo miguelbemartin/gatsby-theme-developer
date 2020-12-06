@@ -34,8 +34,8 @@ const IndexTemplate = ({ data, pageContext }) => {
 
     return <Layout
         sidebar={sidebar}
-        title={title}
-        description={description}
+        metaTitle={title}
+        metaDescription={description}
         metaUrlPath={currentPagePath}>
         <section className="article-list">
             {data.allMarkdownRemark.edges.map( (node, index) =>

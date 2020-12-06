@@ -2,10 +2,10 @@ import React from 'react';
 import Meta from './Meta';
 import "../styles/main.scss"
 
-export default ({ children, sidebar, title, description, metaPreviewImage="", metaUrlPath="" }) =>
+export default ({ children, sidebar, metaTitle, metaDescription, metaPreviewImage="", metaUrlPath="" }) =>
     <div className={"container"}>
-        <Meta title={title}
-              description={description}
+        <Meta metaTitle={metaTitle}
+              metaDescription={metaDescription}
               coverImage={metaPreviewImage}
               urlPath={metaUrlPath}/>
 

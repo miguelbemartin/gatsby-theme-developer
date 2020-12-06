@@ -24,8 +24,8 @@ const PageTemplate = ({ data }) => {
 
     return <Layout
         sidebar={sidebar}
-        title={`${page.title} - ${title}`}
-        description={page.description ? page.description : description}
+        metaTitle={`${page.title} - ${title}`}
+        metaDescription={page.description ? page.description : description}
         metaUrlPath={page.slug}
         metaPreviewImage={page.coverImage}>
         <PageDetail title={page.title}
