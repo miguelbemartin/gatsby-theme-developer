@@ -90,3 +90,12 @@ That's it, you can now run your gatsby site using
 ```shell
 yarn develop
 ```
+
+## ToDo
+
+- [] Implement the cover image in the theme
+- [] Add metaTitle and metaDescription additional in addition of title and description siteMeta fields
+- [] Add RSS Feed
+- [] Add sitemap.xml
+- [] Author image
+- [] Improve the footer
