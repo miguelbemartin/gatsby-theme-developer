@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 import PageDetail from "../components/PageDetail";
 import Sidebar from "../components/Sidebar";
 import useSiteMetadata from "../hooks/use-site-metadata";
+import LayoutArticle from "../components/LayoutArticle";
 
 const PageTemplate = ({ data }) => {
     const {
@@ -23,11 +24,14 @@ const PageTemplate = ({ data }) => {
 
     return <Layout
         sidebar={sidebar}
-        title={title}
-        description={description}>
+        title={`${page.title} - ${title}`}
+        description={page.description ? page.description : description}
+        metaUrlPath={page.slug}
+        metaPreviewImage={page.coverImage}>
         <PageDetail title={page.title}
                     slug={page.slug}
                     date={page.date}
+                    coverImage={page.coverImage}
                     content={htmlContent}/>
     </Layout>
 }
@@ -38,11 +42,10 @@ export const query = graphql`
       id
       html
       frontmatter {
-        date
         description
-        tags
         title
         slug
+        coverImage
       }
     }
   }

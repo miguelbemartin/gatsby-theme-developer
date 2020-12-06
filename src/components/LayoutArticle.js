@@ -2,9 +2,12 @@ import React from 'react';
 import "../styles/main.scss"
 import Meta from "./Meta";
 
-export default ({ children, title, description, strings }) =>
+export default ({ children, title, description, strings, metaPreviewImage="", metaUrlPath="" }) =>
     <div className={"container detail"}>
-        <Meta title={title} description={description}/>
+        <Meta title={title}
+              description={description}
+              coverImage={metaPreviewImage}
+              urlPath={metaUrlPath}/>
 
         <section className="back">
             <a className={"btn btn-light btn-sm"} href={"/"} title={title}>{strings.back}</a>

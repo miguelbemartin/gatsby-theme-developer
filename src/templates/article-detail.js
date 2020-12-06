@@ -8,7 +8,8 @@ import useStrings from "../hooks/use-strings";
 const IndexTemplate = ({ data }) => {
     const {
         title,
-        language
+        language,
+        description
     } = useSiteMetadata();
 
     const article = data.markdownRemark.frontmatter;
@@ -17,12 +18,15 @@ const IndexTemplate = ({ data }) => {
 
     return <LayoutArticle
             title={`${article.title} - ${title}`}
-            description={article.description}
-            strings={strings}>
+            description={article.description ? article.description : description}
+            strings={strings}
+            metaUrlPath={article.slug}
+            metaPreviewImage={article.coverImage}>
             <ArticleDetail
                 title={article.title}
                 slug={article.slug}
                 date={article.date}
+                coverImage={article.coverImage}
                 content={htmlContent}/>
         </LayoutArticle>
 }
@@ -39,6 +43,7 @@ export const query = graphql`
         tags
         title
         slug
+        coverImage
       }
     }
   }

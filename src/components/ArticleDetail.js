@@ -1,7 +1,7 @@
 import React from 'react';
 import useFormattedDate from "../hooks/use-formatted-date";
 
-export default ({ title, date, content }) => {
+export default ({ title, date, content, coverImage }) => {
     const formattedDate = useFormattedDate(date, "DD-MM-YYYY");
     
     return <article className={"article detail"}>

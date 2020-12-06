@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default ({ title, content }) =>
+export default ({ title, content, coverImage }) =>
     <article className={"page detail"}>
         <header>
             <h1>{title}</h1>

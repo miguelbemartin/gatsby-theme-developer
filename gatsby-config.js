@@ -9,6 +9,8 @@ module.exports = themeOptions => {
             title: config.title,
             description: config.description,
             language: config.language,
+            site_url: config.site_url,
+            default_preview_image: config.default_preview_image,
             articles_per_page: config.articles_per_page,
             author: config.author,
             links: config.links

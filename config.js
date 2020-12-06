@@ -1,9 +1,12 @@
 module.exports = {
     title: "Serenity 平静",
     description: "A minimal theme for your personal blog or webpage",
+    site_url: "https://asiermarques.com",
+    default_preview_image: "/og-default.png",
     author: {
       name: "Asier Marqués",
       bio: "Software Engineer",
+      url: "https://asiermarques.com",
       links: {
           twitter: "https://twitter.com/asiermarques",
           linkedin: "https://linkedin.com/in/asier",

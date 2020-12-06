@@ -2,9 +2,12 @@ import React from 'react';
 import Meta from './Meta';
 import "../styles/main.scss"
 
-export default ({ children, sidebar, title, description }) =>
+export default ({ children, sidebar, title, description, metaPreviewImage="", metaUrlPath="" }) =>
     <div className={"container"}>
-        <Meta title={title} description={description}/>
+        <Meta title={title}
+              description={description}
+              coverImage={metaPreviewImage}
+              urlPath={metaUrlPath}/>
 
         <div className="row">
             <aside className="col-lg-3">

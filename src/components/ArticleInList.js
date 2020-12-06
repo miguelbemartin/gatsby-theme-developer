@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "gatsby"
 import useFormattedDate from "../hooks/use-formatted-date";
 
-export default ({ title, slug, date, description }) => {
+export default ({ title, slug, date, description, coverImage = "" }) => {
     const formattedDate = useFormattedDate(date, "DD-MM-YYYY");
 
     return <article>

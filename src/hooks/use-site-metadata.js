@@ -8,8 +8,12 @@ export default function useSiteMetadata() {
             title
             description
             language
+            site_url
+            default_preview_image
             articles_per_page
             author {
+              bio
+              url
               links {
                 twitter
                 linkedin 

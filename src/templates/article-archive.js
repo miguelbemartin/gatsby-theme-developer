@@ -20,7 +20,8 @@ const IndexTemplate = ({ data, pageContext }) => {
         hasNextPage,
         hasPrevPage,
         prevPagePath,
-        nextPagePath
+        nextPagePath,
+        currentPagePath,
     } = pageContext;
 
     const strings = useStrings(language);
@@ -34,7 +35,8 @@ const IndexTemplate = ({ data, pageContext }) => {
     return <Layout
         sidebar={sidebar}
         title={title}
-        description={description}>
+        description={description}
+        metaUrlPath={currentPagePath}>
         <section className="article-list">
             {data.allMarkdownRemark.edges.map( (node, index) =>
                 <ArticleInList key={index}
@@ -42,6 +44,7 @@ const IndexTemplate = ({ data, pageContext }) => {
                     slug={node.node.frontmatter.slug}
                     date={node.node.frontmatter.date}
                     description={node.node.frontmatter.description}
+                    coverImage={node.node.frontmatter.coverImage}
                 />
             )}
             <Pagination
@@ -70,6 +73,7 @@ export const query = graphql`
             date
             category
             description
+            coverImage
           }
         }
       }

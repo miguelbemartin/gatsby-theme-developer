@@ -18,6 +18,7 @@ exports.createPages = async ({ graphql, actions }) => {
                     frontmatter {
                       template
                       slug
+                      coverImage
                     }
                 }
             }
@@ -25,21 +26,24 @@ exports.createPages = async ({ graphql, actions }) => {
     }`);
 
     const {articles_per_page} = result.data.site.siteMetadata;
+
     result.data.allMarkdownRemark.edges.forEach( edge => {
-        if (edge.node.frontmatter.template === 'page') {
+        const {template, slug} = edge.node.frontmatter;
+
+        if (template === 'page') {
             createPage({
-                path: edge.node.frontmatter.slug,
+                path: slug,
                 component: require.resolve('./src/templates/page-detail.js'),
                 context: {
-                    slug: edge.node.frontmatter.slug
+                    slug
                 }
             });
         } else if (edge.node.frontmatter.template === 'post') {
             createPage({
-                path: edge.node.frontmatter.slug,
+                path: slug,
                 component: require.resolve('./src/templates/article-detail.js'),
                 context: {
-                    slug: edge.node.frontmatter.slug
+                    slug
                 }
             });
         }
@@ -56,12 +60,32 @@ exports.createPages = async ({ graphql, actions }) => {
                 postsOffset: i * articles_per_page,
                 prevPagePath: i <= 1 ? '/' : `/page/${i - 1}`,
                 nextPagePath: `/page/${i + 1}`,
+                currentPagePath: i <= 1 ? '/' : `/page/${i - 1}`,
                 hasPrevPage: i !== 0,
                 hasNextPage: i !== numPages - 1
             }
         });
     }
 };
+
+exports.createSchemaCustomization = ({ actions }) => {
+    const { createTypes } = actions
+    const typeDefs = `
+    type MarkdownRemarkFrontmatter {
+        date: String
+        description: String
+        tags: [String]
+        title: String!
+        slug: String!
+        coverImage: String
+    }
+
+    type MarkdownRemark implements Node {
+      frontmatter: MarkdownRemarkFrontmatter
+    }
+  `
+    createTypes(typeDefs)
+}
 
 exports.onPreBootstrap = ({ store, reporter }) => {
     const { program } = store.getState()
@@ -97,6 +121,7 @@ function copyStaticAssets(staticsPath, reporter){
         "favicon-16x16.png",
         "favicon-32x32.png",
         "site.webmanifest",
+        "og-default.png",
     ];
     assets.forEach(asset => {
         const absAsset = path.join(staticsPath, asset);
@@ -117,9 +142,9 @@ title: Hello World
 template: post
 tags:
   - Writing
-category: Writing
 draft: false
 description: "This is your first article, you can find it in the /content directory"
+coverImage: ""
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eu lorem eget metus venenatis dignissim. Vivamus lobortis, mauris eu facilisis sodales, nisl metus ultrices orci, non finibus quam nulla ac est. Fusce egestas faucibus lorem quis varius. Morbi id faucibus tellus, sit amet venenatis metus. Vivamus diam odio, mollis ac varius ut, imperdiet ut nunc. Sed sagittis nulla et tempus egestas. Donec sit amet molestie turpis. Maecenas purus ante, rutrum id erat eu, rutrum ultrices ligula.
@@ -260,6 +285,7 @@ Duplicated footnote reference[^second].
 slug: /about-me/
 title: About
 template: page
+coverImage: ""
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eu lorem eget metus venenatis dignissim. Vivamus lobortis, mauris eu facilisis sodales, nisl metus ultrices orci, non finibus quam nulla ac est. Fusce egestas faucibus lorem quis varius. Morbi id faucibus tellus, sit amet venenatis metus. Vivamus diam odio, mollis ac varius ut, imperdiet ut nunc. Sed sagittis nulla et tempus egestas. Donec sit amet molestie turpis. Maecenas purus ante, rutrum id erat eu, rutrum ultrices ligula.
