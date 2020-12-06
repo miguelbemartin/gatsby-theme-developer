@@ -93,6 +93,7 @@ yarn develop
 
 ## ToDo
 
+- [ ] Add testing and CI
 - [ ] Implement the cover image in the theme
 - [ ] Add metaTitle and metaDescription additional in addition of title and description siteMeta fields
 - [ ] Add RSS Feed
