@@ -19,6 +19,24 @@ yarn init
 yarn add gatsby react react-dom gatsby-theme-serenity
 ```
 
+Recommended: you can add scripts to your `package.json` file
+
+```javascript
+{
+  "dependencies": {
+    "gatsby": "^2.28.0",
+    "gatsby-theme-serenity": "^1.1.13",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "scripts": {
+    "develop": "yarn run clean && gatsby develop",
+    "build": "yarn run clean && gatsby build",
+    "clean": "gatsby clean"
+  }
+}
+```
+
 Then create the `gatsby-config.js` file:
 
 ```shell
@@ -70,5 +88,5 @@ module.exports = {
 That's it, you can now run your gatsby site using
 
 ```shell
-yarn gatsby develop
+yarn develop
 ```
