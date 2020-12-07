@@ -4,7 +4,6 @@ import Layout from "../components/Layout";
 import PageDetail from "../components/PageDetail";
 import Sidebar from "../components/Sidebar";
 import useSiteMetadata from "../hooks/use-site-metadata";
-import LayoutArticle from "../components/LayoutArticle";
 
 const PageTemplate = ({ data }) => {
     const {

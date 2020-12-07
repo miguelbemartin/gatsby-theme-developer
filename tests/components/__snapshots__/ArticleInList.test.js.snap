@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArticleInList component renders correctly 1`] = `
+<article>
+  <small
+    className="date"
+  >
+    <time
+      dateTime="2020-12-01 16:00"
+      pubdate="yes"
+    >
+      2020-12-01
+    </time>
+  </small>
+  <a
+    href="/test"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    title="title"
+  >
+    <h2>
+      title
+    </h2>
+  </a>
+  <p>
+    this is the description
+  </p>
+</article>
+`;

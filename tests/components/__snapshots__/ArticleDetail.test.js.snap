@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArticleDetail component renders correctly 1`] = `
+<article
+  className="article detail"
+>
+  <header>
+    <h1>
+      title
+    </h1>
+    <time
+      dateTime="2020-12-01 16:00"
+      pubdate="yes"
+    >
+      2020-12-01
+    </time>
+  </header>
+  <section
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<h2>test</h2><p>test world</p>",
+      }
+    }
+  />
+</article>
+`;

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageDetail component renders correctly 1`] = `
+<article
+  className="page detail"
+>
+  <header>
+    <h1>
+      title
+    </h1>
+  </header>
+  <section
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<h2>test</h2><p>test world</p>",
+      }
+    }
+  />
+</article>
+`;
