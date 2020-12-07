@@ -96,7 +96,62 @@ module.exports = themeOptions => {
                     display: 'swap'
                 }
             },
-            `gatsby-plugin-twitter`
+            `gatsby-plugin-twitter`,
+            {
+                resolve: `gatsby-plugin-feed`,
+                options: {
+                    query: `
+                      {
+                        site {
+                          siteMetadata {
+                            site_url
+                            title
+                            description
+                          }
+                        }
+                      }
+                    `,
+                    feeds: [
+                        {
+                            serialize: ({ query: { site, allMarkdownRemark } }) => {
+                                return allMarkdownRemark.edges.map(edge => {
+                                    return Object.assign({}, edge.node.frontmatter, {
+                                        date: edge.node.frontmatter.date,
+                                        url: site.siteMetadata.site_url + edge.node.frontmatter.slug,
+                                        guid: site.siteMetadata.site_url + edge.node.frontmatter.slug,
+                                        custom_elements: [{ "content:encoded": edge.node.html }],
+                                    })
+                                })
+                            },
+                            query: `
+                              {
+                                allMarkdownRemark(
+                                  limit: 1000,
+                                  sort: { order: DESC, fields: [frontmatter___date] },
+                                  filter: { frontmatter: { template: { eq: "post" }, draft: { ne: true } } }
+                                ) {
+                                  edges {
+                                    node {
+                                      html
+                                      frontmatter {
+                                        title
+                                        date
+                                        template
+                                        draft
+                                        slug
+                                        description
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            `,
+                            output: "/rss.xml",
+                            title: `${config.title} RSS Feed`,
+                        },
+                    ],
+                },
+            },
         ],
     }
 }
