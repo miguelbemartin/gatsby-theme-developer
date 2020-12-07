@@ -1,5 +1,6 @@
 import React from 'react';
 import useSiteMetadata from "../hooks/use-site-metadata";
+import {Helmet} from "react-helmet";
 
 export default ({ metaTitle, metaDescription, urlPath = "", coverImage = "" }) => {
         const { author,
@@ -11,7 +12,7 @@ export default ({ metaTitle, metaDescription, urlPath = "", coverImage = "" }) =
         const canonicalUrl = urlPath ? `${site_url}${urlPath}` : site_url;
         const previewImage = coverImage ? coverImage : default_preview_image;
 
-        return <>
+        return <Helmet>
                 <title>{metaTitle}</title>
                 <link rel="canonical" href={canonicalUrl} />
                 <meta name="description" content={metaDescription ? metaDescription : description} />
@@ -27,5 +28,5 @@ export default ({ metaTitle, metaDescription, urlPath = "", coverImage = "" }) =
                 <meta property="og:image" content={previewImage}/>
                 <meta property="og:site_name" content={title}/>
                 <meta property="article:author" content={author.url}/>
-        </>
+        </Helmet>
 }

@@ -1,16 +1,13 @@
 import React from 'react';
-import Meta from './Meta';
+import Meta from './HelmetMeta';
 import "../styles/main.scss"
-import {Helmet} from "react-helmet";
 
 export default ({ children, sidebar, metaTitle, metaDescription, metaPreviewImage="", metaUrlPath="" }) =>
     <div className={"container"}>
-        <Helmet>
-            <Meta metaTitle={metaTitle}
-                  metaDescription={metaDescription}
-                  coverImage={metaPreviewImage}
-                  urlPath={metaUrlPath}/>
-        </Helmet>
+        <Meta metaTitle={metaTitle}
+              metaDescription={metaDescription}
+              coverImage={metaPreviewImage}
+              urlPath={metaUrlPath}/>
 
         <div className="row">
             <aside className="col-lg-3">
