@@ -1,5 +1,7 @@
 # Gatsby Theme Serenity 平静
 
+
+[![CircleCI](https://circleci.com/gh/asiermarques/gatsby-theme-serenity.svg?style=svg)](https://circleci.com/gh/asiermarques/gatsby-theme-serenity) 
 [![Current npm package version.](https://img.shields.io/npm/v/gatsby-theme-serenity.svg)](https://www.npmjs.com/package/gatsby-theme-serenity)
 
 ## Demo
@@ -93,7 +95,6 @@ yarn develop
 
 ## ToDo
 
-- [ ] Add testing and CI
 - [ ] Implement the cover image in the theme
 - [ ] Add metaTitle and metaDescription additional in addition of title and description siteMeta fields
 - [ ] Add RSS Feed
