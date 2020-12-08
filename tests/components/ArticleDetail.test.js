@@ -20,4 +20,18 @@ describe("ArticleDetail component", () => {
         expect(tree).toMatchSnapshot();
         expect(useFormattedDate).toBeCalled();
     });
+    it('renders correctly with cover image and caption', () => {
+        useFormattedDate.mockReturnValue("2020-12-01");
+        const tree = renderer
+            .create(<ArticleDetail
+                title={"title"}
+                content={"<h2>test</h2><p>test world</p>"}
+                coverImage={"/custom-image.png"}
+                coverImageCaption={"Image by <a href='/test'>Test</a>"}
+                date={"2020-12-01 16:00"}/>)
+            .toJSON();
+
+        expect(tree).toMatchSnapshot();
+        expect(useFormattedDate).toBeCalled();
+    });
 })

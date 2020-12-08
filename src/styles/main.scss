@@ -177,9 +177,13 @@ article.article.detail, article.page.detail{
     display: block;
     margin: $paragraph-margin-bottom auto;
   }
-  section.cover{
+  figure.cover{
     background: $gray-800;
     margin-bottom: $paragraph-margin-bottom*3;
+    figcaption {
+      font-size: $font-size-base/1.6;
+      color: $gray-600
+    }
     img{
       @include media-breakpoint-up(lg) {
         width: 140%;

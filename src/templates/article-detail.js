@@ -27,6 +27,7 @@ const IndexTemplate = ({ data }) => {
                 slug={article.slug}
                 date={article.date}
                 coverImage={article.coverImage}
+                coverImageCaption={article.coverImageCaption}
                 content={htmlContent}/>
         </LayoutArticle>
 }

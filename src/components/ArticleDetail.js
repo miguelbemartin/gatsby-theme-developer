@@ -1,7 +1,7 @@
 import React from 'react';
 import useFormattedDate from "../hooks/use-formatted-date";
 
-export default ({ title, date, content, coverImage }) => {
+export default ({ title, date, content, coverImage="", coverImageCaption="" }) => {
     const formattedDate = useFormattedDate(date, "DD-MM-YYYY");
     
     return <article className={"article detail"}>
@@ -11,9 +11,10 @@ export default ({ title, date, content, coverImage }) => {
                   dateTime={date}>{formattedDate}</time>
         </header>
 
-        {coverImage && <section className={"cover"}>
+        {coverImage && <figure className={"cover"}>
             <img src={coverImage} alt={title}/>
-        </section>}
+            {coverImageCaption && <figcaption dangerouslySetInnerHTML={{__html: coverImageCaption}}></figcaption>}
+        </figure>}
 
         <section dangerouslySetInnerHTML={{__html: content}}/>
     </article>

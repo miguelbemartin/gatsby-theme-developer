@@ -78,6 +78,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         title: String!
         slug: String!
         coverImage: String
+        coverImageCaption: String
     }
 
     type MarkdownRemark implements Node {

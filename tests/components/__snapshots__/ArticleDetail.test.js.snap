@@ -15,14 +15,55 @@ exports[`ArticleDetail component renders correctly 1`] = `
       2020-12-01
     </time>
   </header>
-  <section
+  <figure
     className="cover"
   >
     <img
       alt="title"
       src="/custom-image.png"
     />
-  </section>
+    
+  </figure>
+  <section
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<h2>test</h2><p>test world</p>",
+      }
+    }
+  />
+</article>
+`;
+
+exports[`ArticleDetail component renders correctly with cover image and caption 1`] = `
+<article
+  className="article detail"
+>
+  <header>
+    <h1>
+      title
+    </h1>
+    <time
+      dateTime="2020-12-01 16:00"
+      pubdate="yes"
+    >
+      2020-12-01
+    </time>
+  </header>
+  <figure
+    className="cover"
+  >
+    <img
+      alt="title"
+      src="/custom-image.png"
+    />
+    <figcaption
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "Image by <a href='/test'>Test</a>",
+        }
+      }
+    />
+  </figure>
   <section
     dangerouslySetInnerHTML={
       Object {
