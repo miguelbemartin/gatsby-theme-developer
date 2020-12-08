@@ -16,6 +16,14 @@ exports[`ArticleDetail component renders correctly 1`] = `
     </time>
   </header>
   <section
+    className="cover"
+  >
+    <img
+      alt="title"
+      src="/custom-image.png"
+    />
+  </section>
+  <section
     dangerouslySetInnerHTML={
       Object {
         "__html": "<h2>test</h2><p>test world</p>",

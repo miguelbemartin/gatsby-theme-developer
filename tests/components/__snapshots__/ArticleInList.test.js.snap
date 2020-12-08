@@ -2,28 +2,36 @@
 
 exports[`ArticleInList component renders correctly 1`] = `
 <article>
-  <small
-    className="date"
-  >
-    <time
-      dateTime="2020-12-01 16:00"
-      pubdate="yes"
-    >
-      2020-12-01
-    </time>
-  </small>
   <a
     href="/test"
     onClick={[Function]}
     onMouseEnter={[Function]}
     title="title"
   >
+    <small
+      className="date"
+    >
+      <time
+        dateTime="2020-12-01 16:00"
+        pubdate="yes"
+      >
+        2020-12-01
+      </time>
+    </small>
+    <section
+      className="cover"
+      style={
+        Object {
+          "backgroundImage": "url(/custom-image.png)",
+        }
+      }
+    />
     <h2>
       title
     </h2>
+    <p>
+      this is the description
+    </p>
   </a>
-  <p>
-    this is the description
-  </p>
 </article>
 `;
