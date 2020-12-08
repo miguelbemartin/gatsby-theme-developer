@@ -178,17 +178,18 @@ article.article.detail, article.page.detail{
     margin: $paragraph-margin-bottom auto;
   }
   figure.cover{
-    background: $gray-800;
     margin-bottom: $paragraph-margin-bottom*3;
     figcaption {
-      font-size: $font-size-base/1.6;
-      color: $gray-600
+      font-size: $font-size-base/1.3;
+      color: $gray-600;
+      text-align: center;
+      margin-top: -$paragraph-margin-bottom/2;
     }
     img{
       @include media-breakpoint-up(lg) {
         width: 140%;
         max-width: 140%;
-        margin: 0 -20%;
+        margin: $paragraph-margin-bottom -20%;
       }
     }
   }
