@@ -90,7 +90,7 @@ module.exports = themeOptions => {
                 resolve: `gatsby-plugin-google-fonts`,
                 options: {
                     fonts: [
-                        'Fira Sans\:300,400,400i',
+                        'Fira Sans\:300,400,500,600,700',
                         'Merriweather'
                     ],
                     display: 'swap'

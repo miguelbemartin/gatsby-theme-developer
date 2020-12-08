@@ -72,6 +72,7 @@ $dark:          $gray-800;
 $font-family-monospace: 'Merriweather', serif;
 $font-family-sans-serif: 'Fira Sans', sans-serif;
 $font-size-base: 1.2rem;
+$headings-font-weight: 600;
 
 $spacer: 1rem;
 $paragraph-margin-bottom: $spacer * 1.8;
@@ -161,10 +162,13 @@ article.article.detail, article.page.detail{
     }
   }
   blockquote{
-    margin: $paragraph-margin-bottom*2;
+    margin: $paragraph-margin-bottom*2 $paragraph-margin-bottom;
     text-align: center;
     color: $gray-600;
     font-size: $font-size-base*1.2;
+    @include media-breakpoint-up(md) {
+      margin: $paragraph-margin-bottom*2;
+    }
   }
   hr{
     margin: $paragraph-margin-bottom*2 0;
@@ -199,6 +203,12 @@ article.article.detail, article.page.detail{
       margin-bottom: $paragraph-margin-bottom/2;
     }
   }
+  .footnotes{
+    font-size: $font-size-base/1.2;
+    p{
+      margin-bottom: $paragraph-margin-bottom/2;
+    }
+  }
   .gatsby-highlight-code-line {
     background-color: #feb;
     display: block;
@@ -208,10 +218,6 @@ article.article.detail, article.page.detail{
     padding-left: 0.75em;
     border-left: 0.25em solid #f99;
   }
-  /**
- * Add back the container background-color, border-radius, padding, margin
- * and overflow that we removed from <pre>.
- */
   .gatsby-highlight {
     background-color: #000!important;
     font-size: 0.9rem;
@@ -220,14 +226,6 @@ article.article.detail, article.page.detail{
     padding: 1em;
     overflow: auto;
   }
-
-  /**
-   * Remove the default PrismJS theme background-color, border-radius, margin,
-   * padding and overflow.
-   * 1. Make the element just wide enough to fit its content.
-   * 2. Always fill the visible space in .gatsby-highlight.
-   * 3. Adjust the position of the line numbers
-   */
   .gatsby-highlight pre[class*="language-"] {
     background-color: transparent;
     margin: 0;
@@ -236,12 +234,9 @@ article.article.detail, article.page.detail{
     float: left; /* 1 */
     min-width: 100%; /* 2 */
   }
-  /* Adjust the position of the line numbers */
   .gatsby-highlight pre[class*="language-"].line-numbers {
     padding-left: 2.8em;
   }
-
-
 }
 
 article.article.detail {
@@ -289,7 +284,7 @@ article.page.detail {
     }
   }
   .pagination {
-    margin-bottom: $paragraph-margin-bottom;
+    margin-bottom: $space;
     a{
       color: $black;
     }
