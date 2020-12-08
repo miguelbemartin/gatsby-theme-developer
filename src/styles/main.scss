@@ -176,9 +176,12 @@ article.article.detail, article.page.detail{
   }
   section.cover{
     background: $gray-800;
+    margin-bottom: $paragraph-margin-bottom*3;
     img{
       @include media-breakpoint-up(md) {
-        margin: 0 -1rem;
+        width: 140%;
+        max-width: 140%;
+        margin: 0 -20%;
       }
     }
   }
