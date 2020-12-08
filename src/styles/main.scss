@@ -166,6 +166,9 @@ article.article.detail, article.page.detail{
     color: $gray-600;
     font-size: $font-size-base*1.2;
   }
+  hr{
+    margin: $paragraph-margin-bottom*2 0;
+  }
   img{
     height: auto;
   }
@@ -178,7 +181,7 @@ article.article.detail, article.page.detail{
     background: $gray-800;
     margin-bottom: $paragraph-margin-bottom*3;
     img{
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-up(lg) {
         width: 140%;
         max-width: 140%;
         margin: 0 -20%;
