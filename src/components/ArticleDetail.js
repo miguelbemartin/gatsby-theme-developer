@@ -11,6 +11,10 @@ export default ({ title, date, content, coverImage }) => {
                   dateTime={date}>{formattedDate}</time>
         </header>
 
+        {coverImage && <section className={"cover"}>
+            <img src={coverImage} alt={title}/>
+        </section>}
+
         <section dangerouslySetInnerHTML={{__html: content}}/>
     </article>
 }

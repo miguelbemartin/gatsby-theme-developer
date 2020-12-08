@@ -89,7 +89,10 @@ $headings-margin-bottom: $paragraph-margin-bottom/2;
 $space: $spacer*5;
 
 aside {
-  margin: $space 0;
+  margin: $space/2 0 0 0;
+  @include media-breakpoint-up(lg) {
+    margin: $space 0;
+  }
   header a{
     color: $black;
     h1{
@@ -171,6 +174,14 @@ article.article.detail, article.page.detail{
     display: block;
     margin: $paragraph-margin-bottom auto;
   }
+  section.cover{
+    background: $gray-800;
+    img{
+      @include media-breakpoint-up(md) {
+        margin: 0 -1rem;
+      }
+    }
+  }
   ol,ul {
     margin-bottom: $paragraph-margin-bottom;
     li {
@@ -239,11 +250,31 @@ article.page.detail {
 .article-list{
   article{
     margin: $space 0;
-    .date{
-      color: $gray-600
-    }
     a{
-      color: $black;
+      text-decoration: none;
+      .date{
+        color: $gray-600
+      }
+      h2{
+        color: $black;
+      }
+      p {
+        color: $gray-600;
+      }
+      .cover{
+        height: $space*3;
+        margin: $space/6 0 $space/3 0;
+        background-color: $gray-800;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+      }
+    }
+    a:hover{
+      text-decoration: none;
+      h2{
+        text-decoration: underline;
+      }
     }
   }
   .pagination {

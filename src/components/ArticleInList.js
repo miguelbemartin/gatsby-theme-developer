@@ -6,15 +6,16 @@ export default ({ title, slug, date, description, coverImage = "" }) => {
     const formattedDate = useFormattedDate(date, "DD-MM-YYYY");
 
     return <article>
-        <small className={"date"}>
-            <time pubdate={"yes"}
-                  dateTime={date}>{formattedDate}</time>
-        </small>
         <Link title={title}
               to={slug}>
+            <small className={"date"}>
+                <time pubdate={"yes"}
+                      dateTime={date}>{formattedDate}</time>
+            </small>
+            {coverImage && <section className={"cover"} style={{"backgroundImage": `url(${coverImage})`}}/>}
             <h2>{title}</h2>
+            <p>{description}</p>
         </Link>
-        <p>{description}</p>
     </article>
 }
 
