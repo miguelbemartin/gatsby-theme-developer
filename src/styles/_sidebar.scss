@@ -1,0 +1,47 @@
+aside {
+  margin: $space/2 0 0 0;
+  @include media-breakpoint-up(lg) {
+    margin: $space 0;
+  }
+  header a{
+    color: $black;
+    h1{
+      font-size: $font-size-base*1.2;
+    }
+  }
+  .nav a:hover, header a:hover{
+    color: $gray-600;
+  }
+  header a:hover{
+    text-decoration: none;
+  }
+  p{
+    margin: 0 0 $paragraph-margin-bottom/3 0;
+    color: $gray-600;
+  }
+  p, .nav{
+    font-size: $font-size-base*0.8;
+  }
+  .nav{
+    li{
+      margin-bottom: $paragraph-margin-bottom/3;
+      a.nav-link{
+        color: $black;
+        padding: 0;
+        display: inline-block;
+      }
+      a.active{
+        border-bottom: 1px solid $black;
+      }
+    }
+  }
+  .authorLinks{
+    margin: $paragraph-margin-bottom/3 0 $paragraph-margin-bottom/2 0;
+    a{
+      color: $black;
+      display: inline-block;
+      margin-left: 0.4rem;
+      margin-top: 0.2rem;
+    }
+  }
+}

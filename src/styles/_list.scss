@@ -1,0 +1,43 @@
+.article-list{
+  article{
+    margin: $space 0;
+    a{
+      text-decoration: none;
+      .date{
+        color: $gray-600
+      }
+      h2{
+        color: $black;
+      }
+      p {
+        color: $gray-600;
+      }
+      .cover{
+        height: $space*3;
+        margin: $space/6 0 $space/3 0;
+        background-color: $gray-800;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+      }
+    }
+    a:hover{
+      text-decoration: none;
+      h2{
+        text-decoration: underline;
+      }
+    }
+  }
+  .pagination {
+    margin-bottom: $space;
+    a{
+      color: $black;
+    }
+    .next{
+      text-align: right;
+    }
+    .disabled {
+      display: none;
+    }
+  }
+}
