@@ -21,20 +21,14 @@ yarn init
 yarn add gatsby react react-dom gatsby-theme-serenity
 ```
 
-Recommended: you can add scripts to your `package.json` file
+You can add now the yarn scripts to your `package.json` file
 
 ```javascript
 {
-  "dependencies": {
-    "gatsby": "^2.28.0",
-    "gatsby-theme-serenity": "^1.1.13",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
-  },
   "scripts": {
-    "develop": "yarn run clean && gatsby develop",
-    "build": "yarn run clean && gatsby build",
-    "clean": "gatsby clean"
+    "build": "gatsby build",
+    "clean": "gatsby clean",
+    "develop": "gatsby develop"
   }
 }
 ```
@@ -92,6 +86,45 @@ That's it, you can now run your gatsby site using
 ```shell
 yarn develop
 ```
+
+This will run a local web server and create the `content` and `static` folders with all the required files to run your website.
+
+## Adding content
+
+The content need to be stored in the `content` directory as markdown files.
+
+Every markdown file need to have a frontmatter section in it. Here is an example:
+
+```markdown
+---
+date: 2020-11-20 00:30:03+00:00
+slug: /2020/hello-world/
+title: Hello World
+template: post
+coverImage: /the-image.jpg
+tags:
+  - Writing
+draft: false
+description: "This is your first article, you can find it in the /content directory"
+---
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eu lorem eget metus venenatis dignissim.
+
+```
+
+As you see the frontmatter section has some variables, some are required but others not
+
+| variable           | required   | description                                                                   |
+|--------------------|------------|-------------------------------------------------------------------------------|
+| date               | true       | the ISO 8601 date of the article or page YYYY-MM-DD HH:mm:ss±hh:mm |
+| slug               | true       | the path for the article or page, for example /2020/hello-world |
+| title              | true       | the title of the article or page |
+| description        | false      | the description for the article or page |
+| draft              | true       | is the article is published or not |
+| template           | true       | the template: the possible values are: post or page |
+| coverImage         | false      | the cover image for the article |
+| tags               | false      | an array of YAML tags |
+
 
 ## ToDo
 
