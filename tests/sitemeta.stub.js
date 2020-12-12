@@ -1,8 +1,9 @@
 export default {
     title: "The site title",
+    subtitle: "The subtitle",
     description: "The site description",
     language: "en",
-    site_url: "http://test.com",
+    siteUrl: "http://test.com",
     default_preview_image: "/the-image.png",
     articles_per_page: 4,
     author: {

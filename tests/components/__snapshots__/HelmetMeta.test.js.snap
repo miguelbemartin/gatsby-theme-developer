@@ -23,7 +23,7 @@ Array [
     property="og:type"
   />,
   <meta
-    content="The site title"
+    content="The Title On The Meta"
     data-react-helmet={true}
     property="og:title"
   />,
@@ -108,7 +108,7 @@ Array [
     property="og:type"
   />,
   <meta
-    content="The site title"
+    content="The Title On The Meta"
     data-react-helmet={true}
     property="og:title"
   />,

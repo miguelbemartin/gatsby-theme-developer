@@ -7,9 +7,9 @@ export default ({ metaTitle, metaDescription, urlPath = "", coverImage = "" }) =
                 default_preview_image,
                 title,
                 description,
-                site_url} = useSiteMetadata();
+                siteUrl} = useSiteMetadata();
 
-        const canonicalUrl = urlPath ? `${site_url}${urlPath}` : site_url;
+        const canonicalUrl = urlPath ? `${siteUrl}${urlPath}` : siteUrl;
         const previewImage = coverImage ? coverImage : default_preview_image;
 
         return <Helmet>
@@ -22,7 +22,7 @@ export default ({ metaTitle, metaDescription, urlPath = "", coverImage = "" }) =
                 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
                 <link rel="manifest" href="/site.webmanifest"/>
                 <meta property="og:type" content="article"/>
-                <meta property="og:title" content={title}/>
+                <meta property="og:title" content={metaTitle}/>
                 <meta property="og:description" content={metaDescription}/>
                 <meta property="og:url" content={canonicalUrl}/>
                 <meta property="og:image" content={previewImage}/>
