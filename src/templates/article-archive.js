@@ -70,7 +70,6 @@ export const query = graphql`
             slug
             title
             date
-            category
             description
             coverImage
           }

@@ -106,12 +106,30 @@ exports.onPreBootstrap = ({ store, reporter }) => {
 
     copyStaticAssets(staticsPath, reporter);
 
-    const contentFiles = fs.readdirSync(contentPath).filter( (file) => path.extname(file) === ".md")
+    const contentFiles = recursiveReaddirSync(contentPath).filter( (file) => path.extname(file) === ".md")
     if( contentFiles.length < 1) {
         reporter.log(`creating the default content in the ${contentPath} directory`);
         createDefaultContent(contentPath);
     }
 };
+
+function recursiveReaddirSync(_path) {
+    let list = []
+        , files = fs.readdirSync(_path)
+        , stats
+    ;
+
+    files.forEach(function (file) {
+        stats = fs.lstatSync(path.join(_path, file));
+        if(stats.isDirectory()) {
+            list = list.concat(recursiveReaddirSync(path.join(_path, file)));
+        } else {
+            list.push(path.join(_path, file));
+        }
+    });
+
+    return list;
+}
 
 function copyStaticAssets(staticsPath, reporter){
     const assets = [
