@@ -8,6 +8,7 @@ import useStrings from "../hooks/use-strings";
 export default () => {
     const {
         title,
+        subtitle,
         description,
         author,
         links,
@@ -15,7 +16,8 @@ export default () => {
     } = useSiteMetadata();
     const strings = useStrings(language);
     const sidebar = <Sidebar
-        title={title}
+        title={strings.not_found_title + " - " + title}
+        subtitle={subtitle}
         description={description}
         links={links}
         author={author}/>

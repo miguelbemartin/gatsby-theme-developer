@@ -17,6 +17,7 @@ export default ({ title, date, content, coverImage="", coverImageCaption="" }) =
         </figure>}
 
         <section dangerouslySetInnerHTML={{__html: content}}/>
+
     </article>
 }
 

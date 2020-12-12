@@ -8,7 +8,7 @@ exports.createPages = async ({ graphql, actions }) => {
     {
         site {
             siteMetadata {
-                articles_per_page
+                articlesPerPage
             }
         }
         allMarkdownRemark(filter: { frontmatter: { draft: { ne: true } } }) {
@@ -25,7 +25,7 @@ exports.createPages = async ({ graphql, actions }) => {
        }
     }`);
 
-    const {articles_per_page} = result.data.site.siteMetadata;
+    const {articlesPerPage} = result.data.site.siteMetadata;
 
     result.data.allMarkdownRemark.edges.forEach( edge => {
         const {template, slug} = edge.node.frontmatter;
@@ -49,15 +49,15 @@ exports.createPages = async ({ graphql, actions }) => {
         }
     })
 
-    const numPages = Math.ceil(result.data.allMarkdownRemark.totalCount / articles_per_page);
+    const numPages = Math.ceil(result.data.allMarkdownRemark.totalCount / articlesPerPage);
     for (let i = 0; i < numPages; i += 1) {
         createPage({
             path: i === 0 ? '/' : `/page/${i}`,
             component: require.resolve('./src/templates/article-archive.js'),
             context: {
                 currentPage: i,
-                postsLimit: articles_per_page,
-                postsOffset: i * articles_per_page,
+                postsLimit: articlesPerPage,
+                postsOffset: i * articlesPerPage,
                 prevPagePath: i <= 1 ? '/' : `/page/${i - 1}`,
                 nextPagePath: `/page/${i + 1}`,
                 currentPagePath: i <= 1 ? '/' : `/page/${i - 1}`,

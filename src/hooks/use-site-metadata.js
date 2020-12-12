@@ -6,12 +6,14 @@ export default function useSiteMetadata() {
       site {
         siteMetadata {
             title
+            subtitle
             description
             language
-            site_url
-            default_preview_image
-            articles_per_page
+            siteUrl
+            defaultPreviewImage
+            articlesPerPage
             author {
+              name
               bio
               url
               links {

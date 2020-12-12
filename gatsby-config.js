@@ -7,11 +7,12 @@ module.exports = themeOptions => {
     return {
         siteMetadata: {
             title: config.title,
+            subtitle: config.subtitle,
             description: config.description,
             language: config.language,
-            site_url: config.site_url,
-            default_preview_image: config.default_preview_image,
-            articles_per_page: config.articles_per_page,
+            siteUrl: config.site_url,
+            defaultPreviewImage: config.default_preview_image,
+            articlesPerPage: config.articles_per_page,
             author: config.author,
             links: config.links
         },
@@ -98,14 +99,46 @@ module.exports = themeOptions => {
             },
             `gatsby-plugin-twitter`,
             {
+                resolve: 'gatsby-plugin-sitemap',
+                options: {
+                    query: `
+                      {
+                        site {
+                          siteMetadata {
+                            siteUrl
+                          }
+                        }
+                        allSitePage(
+                          filter: {
+                            path: { regex: "/^(?!/404/|/404.html|/dev-404-page/)/" }
+                          }
+                        ) {
+                          edges {
+                            node {
+                              path
+                            }
+                          }
+                        }
+                      }
+                    `,
+                    output: '/sitemap.xml',
+                    serialize: ({ site, allSitePage }) => allSitePage.edges.map((edge) => ({
+                        url: site.siteMetadata.siteUrl + edge.node.path,
+                        changefreq: 'monthly',
+                        priority: 0.7
+                    }))
+                }
+            },
+            {
                 resolve: `gatsby-plugin-feed`,
                 options: {
                     query: `
                       {
                         site {
                           siteMetadata {
-                            site_url
+                            siteUrl
                             title
+                            subtitle
                             description
                           }
                         }
@@ -116,9 +149,10 @@ module.exports = themeOptions => {
                             serialize: ({ query: { site, allMarkdownRemark } }) => {
                                 return allMarkdownRemark.edges.map(edge => {
                                     return Object.assign({}, edge.node.frontmatter, {
+                                        title: site.siteMetadata.title + " " + site.siteMetadata.subtitle,
                                         date: edge.node.frontmatter.date,
-                                        url: site.siteMetadata.site_url + edge.node.frontmatter.slug,
-                                        guid: site.siteMetadata.site_url + edge.node.frontmatter.slug,
+                                        url: site.siteMetadata.siteUrl + edge.node.path,
+                                        guid: site.siteMetadata.siteUrl + edge.node.path,
                                         custom_elements: [{ "content:encoded": edge.node.html }],
                                     })
                                 })

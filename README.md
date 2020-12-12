@@ -48,9 +48,10 @@ module.exports = {
       resolve: "gatsby-theme-serenity",
       options: {
            title: "Serenity 平静",
+           subtitle: "a short subtitle for the meta title on the home page",
            description: "A minimal theme for your personal blog or webpage",
-           site_url: "https://asiermarques.com",
-           default_preview_image: "/og-default.png",
+           siteUrl: "https://asiermarques.com",
+           defaultPreviewImage: "/og-default.png",
            author: {
                name: "Asier Marqués",
                bio: "Software Engineer",
@@ -125,10 +126,3 @@ As you see the frontmatter section has some variables, some are required but oth
 | coverImage         | false      | the cover image for the article |
 | tags               | false      | an array of YAML tags |
 
-
-## ToDo
-
-- [ ] Add metaTitle and metaDescription additional in addition of title and description siteMeta fields
-- [ ] Add sitemap.xml
-- [ ] Author image
-- [ ] Improve the footer

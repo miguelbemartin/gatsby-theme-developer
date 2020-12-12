@@ -88,6 +88,7 @@ $headings-margin-bottom: $paragraph-margin-bottom/2;
 $space: $spacer*5;
 
 @import "~bootstrap/scss/bootstrap";
+@import "author";
 @import "sidebar";
 @import "detail";
 @import "list";

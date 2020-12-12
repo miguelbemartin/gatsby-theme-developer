@@ -8,6 +8,7 @@ import useSiteMetadata from "../hooks/use-site-metadata";
 const PageTemplate = ({ data }) => {
     const {
         title,
+        subtitle,
         description,
         author,
         links
@@ -17,13 +18,16 @@ const PageTemplate = ({ data }) => {
     const htmlContent = data.markdownRemark.html;
     const sidebar = <Sidebar
         title={title}
+        subtitle={subtitle}
         description={description}
         links={links}
         author={author}/>
 
+    const metaTitle = `${page.title} - ${title}`;
+
     return <Layout
         sidebar={sidebar}
-        metaTitle={`${page.title} - ${title}`}
+        metaTitle={metaTitle}
         metaDescription={page.description ? page.description : description}
         metaUrlPath={page.slug}
         metaPreviewImage={page.coverImage}>

@@ -3,23 +3,22 @@ import { graphql } from "gatsby"
 import LayoutArticle from "../components/LayoutArticle";
 import ArticleDetail from "../components/ArticleDetail";
 import useSiteMetadata from "../hooks/use-site-metadata";
-import useStrings from "../hooks/use-strings";
+import Author from "../components/Author";
 
 const IndexTemplate = ({ data }) => {
     const {
         title,
-        language,
-        description
+        description,
+        author
     } = useSiteMetadata();
 
     const article = data.markdownRemark.frontmatter;
     const htmlContent = data.markdownRemark.html
-    const strings = useStrings(language);
+    const metaTitle = `${article.title} - ${title}`;
 
     return <LayoutArticle
-            metaTitle={`${article.title} - ${title}`}
+            metaTitle={metaTitle}
             metaDescription={article.description ? article.description : description}
-            strings={strings}
             metaUrlPath={article.slug}
             metaPreviewImage={article.coverImage}>
             <ArticleDetail
@@ -29,6 +28,7 @@ const IndexTemplate = ({ data }) => {
                 coverImage={article.coverImage}
                 coverImageCaption={article.coverImageCaption}
                 content={htmlContent}/>
+            <Author author={author}/>
         </LayoutArticle>
 }
 

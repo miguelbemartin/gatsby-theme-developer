@@ -5,15 +5,14 @@ import Pagination from "../components/Pagination";
 import Layout from "../components/Layout";
 import Sidebar from "../components/Sidebar";
 import useSiteMetadata from "../hooks/use-site-metadata";
-import useStrings from "../hooks/use-strings";
 
 const IndexTemplate = ({ data, pageContext }) => {
     const {
         title,
+        subtitle,
         description,
         links,
         author,
-        language,
     } = useSiteMetadata();
 
     const {
@@ -24,17 +23,18 @@ const IndexTemplate = ({ data, pageContext }) => {
         currentPagePath,
     } = pageContext;
 
-    const strings = useStrings(language);
-
     const sidebar = <Sidebar
         title={title}
+        subtitle={subtitle}
         description={description}
         links={links}
         author={author}/>
 
+    const metaTitle = title + (subtitle? " - " + subtitle : "");
+
     return <Layout
         sidebar={sidebar}
-        metaTitle={title}
+        metaTitle={metaTitle}
         metaDescription={description}
         metaUrlPath={currentPagePath}>
         <section className="article-list">
@@ -51,8 +51,7 @@ const IndexTemplate = ({ data, pageContext }) => {
                 nextPagePath={nextPagePath}
                 prevPagePath={prevPagePath}
                 hasNextPage={hasNextPage}
-                hasPrevPage={hasPrevPage}
-                strings={strings}/>
+                hasPrevPage={hasPrevPage}/>
         </section>
     </Layout>
 }

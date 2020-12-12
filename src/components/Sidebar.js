@@ -1,10 +1,8 @@
 import React from 'react';
 import { Link } from "gatsby"
-import useAvailableAuthorLinks from "../hooks/use-available-author-links";
+import AuthorLinks from "./AuthorLinks";
 
-export default ({ title, description, links, author }) => {
-    const availableAuthorLinks = useAvailableAuthorLinks();
-
+export default ({ title, subtitle, description, links, author }) => {
     return <>
         <header>
             <Link
@@ -12,7 +10,7 @@ export default ({ title, description, links, author }) => {
                 title={title}>
                 <h1>{title}</h1>
             </Link>
-            <p>{description}</p>
+            {description && <p>{description}</p>}
         </header>
 
         {links.length > 0 &&
@@ -26,13 +24,6 @@ export default ({ title, description, links, author }) => {
         </ul>
         }
 
-        <p className={"authorLinks"}>
-            {availableAuthorLinks.map((link) =>
-                author.links[link.key] &&
-                <a key={link.key}
-                   href={author.links[link.key]}
-                   title={link.key}>{link.icon}</a>
-            )}
-        </p>
+        <AuthorLinks author={author}/>
     </>
 }
