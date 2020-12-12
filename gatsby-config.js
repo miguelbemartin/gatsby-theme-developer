@@ -151,8 +151,8 @@ module.exports = themeOptions => {
                                     return Object.assign({}, edge.node.frontmatter, {
                                         title: site.siteMetadata.title + " " + site.siteMetadata.subtitle,
                                         date: edge.node.frontmatter.date,
-                                        url: site.siteMetadata.siteUrl + edge.node.path,
-                                        guid: site.siteMetadata.siteUrl + edge.node.path,
+                                        url: site.siteMetadata.siteUrl + edge.node.frontmatter.slug,
+                                        guid: site.siteMetadata.siteUrl + edge.node.frontmatter.slug,
                                         custom_elements: [{ "content:encoded": edge.node.html }],
                                     })
                                 })
