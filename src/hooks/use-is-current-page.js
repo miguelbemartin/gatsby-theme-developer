@@ -1,8 +1,7 @@
 const isAbsolutePath = path => !path?.startsWith(`/`);
-const _window = typeof window !== 'undefined' && window;
 
-export default function useIsCurrentPage(path){
-    if(!_window)
+export default function useIsCurrentPage(path, gatsbyLocation){
+    if(!gatsbyLocation)
         return false;
 
     if(isAbsolutePath(path))
@@ -10,5 +9,5 @@ export default function useIsCurrentPage(path){
         let url = new URL(path);
         path = url.pathname;
     }
-    return _window?.location?.pathname === path;
+    return gatsbyLocation.pathname === path;
 }

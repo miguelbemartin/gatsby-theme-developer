@@ -6,7 +6,7 @@ import Layout from "../components/Layout";
 import Sidebar from "../components/Sidebar";
 import useSiteMetadata from "../hooks/use-site-metadata";
 
-const IndexTemplate = ({ data, pageContext }) => {
+const IndexTemplate = ({ data, pageContext, location }) => {
     const {
         title,
         subtitle,
@@ -28,7 +28,8 @@ const IndexTemplate = ({ data, pageContext }) => {
         subtitle={subtitle}
         description={description}
         links={links}
-        author={author}/>
+        author={author}
+        location={location}/>
 
     const metaTitle = title + (subtitle? " - " + subtitle : "");
 

@@ -5,7 +5,7 @@ import PageDetail from "../components/PageDetail";
 import Sidebar from "../components/Sidebar";
 import useSiteMetadata from "../hooks/use-site-metadata";
 
-const PageTemplate = ({ data }) => {
+const PageTemplate = ({ data, location }) => {
     const {
         title,
         subtitle,
@@ -21,7 +21,8 @@ const PageTemplate = ({ data }) => {
         subtitle={subtitle}
         description={description}
         links={links}
-        author={author}/>
+        author={author}
+        location={location}/>
 
     const metaTitle = `${page.title} - ${title}`;
 
