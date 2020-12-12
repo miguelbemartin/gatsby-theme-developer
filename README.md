@@ -7,7 +7,7 @@
 ## Demo
 
 You can see [my personal blog using this theme](https://asiermarques.com) and 
-[the Github repository with the configuration and content](https://github.com/asiermarques/website/tree/serenity-beta)
+[the Github repository with the configuration and content](https://github.com/asiermarques/website)
 
 
 ## Quick Start
