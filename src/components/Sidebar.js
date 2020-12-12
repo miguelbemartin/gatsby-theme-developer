@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from "gatsby"
 import AuthorLinks from "./AuthorLinks";
+import useIsCurrentPage from "../hooks/use-is-current-page";
 
-export default ({ title, subtitle, description, links, author }) => {
-    return <>
+export default ({ title, subtitle, description, links, author }) => <>
         <header>
             <Link
                 to={"/"}
@@ -16,14 +16,14 @@ export default ({ title, subtitle, description, links, author }) => {
         {links.length > 0 &&
         <ul className="nav flex-column">
             {links.map((link, index) => <li key={index} className="nav-item">
-                <Link className={"nav-link"}
-                      activeClassName={"active"}
-                      to={link.href}
-                      title={link.title}>{link.title}</Link>
+                <a className={"nav-link " + (useIsCurrentPage(link.href)?"active":"")}
+                   href={link.href}
+                   title={link.title}>{link.title}</a>
             </li>)}
         </ul>
         }
 
         <AuthorLinks author={author}/>
     </>
-}
+
+

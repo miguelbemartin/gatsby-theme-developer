@@ -1,10 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import {describe, it, jest} from '@jest/globals';
-import useSiteMetadata from '../../src/hooks/use-site-metadata';
 import PageDetail from "../../src/components/PageDetail";
-
-
 
 describe("PageDetail component", () => {
     it('renders correctly', () => {
