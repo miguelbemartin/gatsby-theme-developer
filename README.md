@@ -1,13 +1,7 @@
-# Gatsby Theme Serenity 平静
+# Gatsby Developer Theme
 
-
-[![CircleCI](https://circleci.com/gh/asiermarques/gatsby-theme-serenity.svg?style=svg)](https://circleci.com/gh/asiermarques/gatsby-theme-serenity) 
-[![Current npm package version.](https://img.shields.io/npm/v/gatsby-theme-serenity.svg)](https://www.npmjs.com/package/gatsby-theme-serenity)
 
 ## Demo
-
-You can see [my personal blog using this theme](https://asiermarques.com) and 
-[the Github repository with the configuration and content](https://github.com/asiermarques/website)
 
 
 ## Quick Start
