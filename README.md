@@ -11,8 +11,8 @@ mkdir my-site
 cd my-site
 yarn init
 
-# install gatsby-theme-serenity and it's dependencies
-yarn add gatsby react react-dom gatsby-theme-serenity
+# install gatsby-developer-theme and it's dependencies
+yarn add gatsby react react-dom gatsby-developer-theme
 ```
 
 You can add now the yarn scripts to your `package.json` file
@@ -39,23 +39,23 @@ And add the theme configuration to it:
 module.exports = {
   plugins: [
     {
-      resolve: "gatsby-theme-serenity",
+      resolve: "gatsby-developer-theme",
       options: {
-           title: "Serenity 平静",
+           title: "Title of your site",
            subtitle: "a short subtitle for the meta title on the home page",
            description: "A minimal theme for your personal blog or webpage",
-           siteUrl: "https://asiermarques.com",
+           siteUrl: "https://...com",
            defaultPreviewImage: "/og-default.png",
            author: {
-               name: "Asier Marqués",
+               name: "Your Name",
                bio: "Software Engineer",
-               url: "https://asiermarques.com",
+               url: "https://...com",
                links: {
-                   twitter: "https://twitter.com/asiermarques",
-                   linkedin: "https://linkedin.com/in/asier",
-                   github: "https://github.com/asiermarques",
-                   instagram: "https://instagram.com/asiermarques",
-                   mail: "mailto:asiermarques@gmail.com"
+                   twitter: "https://twitter.com/username",
+                   linkedin: "https://linkedin.com/in/username",
+                   github: "https://github.com/username",
+                   instagram: "https://instagram.com/username",
+                   mail: "mailto:username@gmail.com"
                }
            },
            links: [
