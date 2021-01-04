@@ -8,16 +8,6 @@ exports[`ArticleInList component renders correctly 1`] = `
     onMouseEnter={[Function]}
     title="title"
   >
-    <small
-      className="date"
-    >
-      <time
-        dateTime="2020-12-01 16:00"
-        pubdate="yes"
-      >
-        2020-12-01
-      </time>
-    </small>
     <section
       className="cover"
       style={
@@ -29,6 +19,16 @@ exports[`ArticleInList component renders correctly 1`] = `
     <h2>
       title
     </h2>
+    <small
+      className="date"
+    >
+      <time
+        dateTime="2020-12-01 16:00"
+        pubdate="yes"
+      >
+        2020-12-01
+      </time>
+    </small>
     <p>
       this is the description
     </p>
