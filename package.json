@@ -1,10 +1,15 @@
 {
   "name": "gatsby-developer-theme",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "author": "Miguel Martín <miguelbemartin@gmail.com> (@miguelbemartin)",
   "license": "MIT",
-  "keywords": ["gatsby", "gatsby-plugin", "gatsby-theme", "blog"],
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "gatsby-theme",
+    "blog"
+  ],
   "peerDependencies": {
     "gatsby": "^2.27.4",
     "react": "^17.0.1",

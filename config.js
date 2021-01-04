@@ -18,12 +18,16 @@ module.exports = {
     },
     links: [
         {
-            title: "Articles",
+            title: "Home",
             href: "/"
         },
         {
             title: "About",
             href: "/about-me"
+        },
+        {
+            title: "Blog",
+            href: "/blog"
         },
     ],
     articles_per_page: 4,
