@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout";
 import PageDetail from "../components/PageDetail";
-import Sidebar from "../components/Sidebar";
+import Header from "../components/Header";
 import useSiteMetadata from "../hooks/use-site-metadata";
 import useStrings from "../hooks/use-strings";
 
@@ -15,14 +15,14 @@ export default () => {
         language
     } = useSiteMetadata();
     const strings = useStrings(language);
-    const sidebar = <Sidebar
+    const header = <Header
         title={title}
         subtitle={subtitle}
         description={description}
         links={links}
         author={author}/>
 
-    return <Layout sidebar={sidebar}
+    return <Layout header={header}
         title={strings.not_found_title + " " + title}
         description={strings.not_found_content}>
         <PageDetail

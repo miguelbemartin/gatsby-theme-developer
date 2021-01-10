@@ -7,8 +7,7 @@ export default ({ title, date, content, coverImage="", coverImageCaption="" }) =
     return <article className={"article detail"}>
         <header>
             <h1>{title}</h1>
-            <time pubdate={"yes"}
-                  dateTime={date}>{formattedDate}</time>
+            <time pubdate={"yes"} dateTime={date}>{formattedDate}</time>
         </header>
 
         {coverImage && <figure className={"cover"}>

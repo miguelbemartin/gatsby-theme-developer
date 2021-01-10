@@ -59,7 +59,6 @@ $colors: map-merge(
   $colors
 );
 
-
 $primary:       $blue;
 $secondary:     $gray-600;
 $success:       $green;
@@ -70,7 +69,7 @@ $light:         $gray-100;
 $dark:          $gray-800;
 
 $font-family-monospace: 'Merriweather', serif;
-$font-family-sans-serif: 'Fira Sans', sans-serif;
+$font-family-sans-serif: 'Rubik', sans-serif;
 $font-size-base: 1.2rem;
 $headings-font-weight: 600;
 
@@ -90,5 +89,6 @@ $space: $spacer*5;
 @import "~bootstrap/scss/bootstrap";
 @import "author";
 @import "sidebar";
+@import "header";
 @import "detail";
 @import "list";

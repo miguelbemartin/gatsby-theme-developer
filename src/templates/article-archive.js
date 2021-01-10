@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import ArticleInList from "../components/ArticleInList";
 import Pagination from "../components/Pagination";
 import Layout from "../components/Layout";
-import Sidebar from "../components/Sidebar";
+import Header from "../components/Header";
 import useSiteMetadata from "../hooks/use-site-metadata";
 
 const IndexTemplate = ({ data, pageContext, location }) => {
@@ -23,7 +23,7 @@ const IndexTemplate = ({ data, pageContext, location }) => {
         currentPagePath,
     } = pageContext;
 
-    const sidebar = <Sidebar
+    const header = <Header
         title={title}
         subtitle={subtitle}
         description={description}
@@ -34,7 +34,7 @@ const IndexTemplate = ({ data, pageContext, location }) => {
     const metaTitle = title + (subtitle? " - " + subtitle : "");
 
     return <Layout
-        sidebar={sidebar}
+        header={header}
         metaTitle={metaTitle}
         metaDescription={description}
         metaUrlPath={currentPagePath}>

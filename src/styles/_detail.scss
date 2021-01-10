@@ -4,6 +4,9 @@
 }
 
 article.article.detail, article.page.detail{
+  h1{
+    font-weight: 700;
+  }
   h2,h3,h4,h5{
     margin-top: $space/1.4;
   }
@@ -111,6 +114,7 @@ article.article.detail {
 article.page.detail {
   margin: $space 0;
   header{
+    text-align: center;
     margin-bottom: $space/2;
   }
 }

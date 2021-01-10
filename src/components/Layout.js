@@ -2,7 +2,7 @@ import React from 'react';
 import Meta from './HelmetMeta';
 import "../styles/main.scss"
 
-export default ({ children, sidebar, metaTitle, metaDescription, metaPreviewImage="", metaUrlPath="" }) =>
+export default ({ children, header, footer, metaTitle, metaDescription, metaPreviewImage="", metaUrlPath="" }) =>
     <div className={"container"}>
         <Meta metaTitle={metaTitle}
               metaDescription={metaDescription}
@@ -10,11 +10,18 @@ export default ({ children, sidebar, metaTitle, metaDescription, metaPreviewImag
               urlPath={metaUrlPath}/>
 
         <div className="row">
-            <aside className="col-lg-3">
-                {sidebar}
-            </aside>
-            <div className="col-lg-8 offset-lg-1">
+            <div className="col-lg-12">
+                {header}
+            </div>
+        </div>
+        <div className="row">
+            <div className="col-lg-12">
                 {children}
+            </div>
+        </div>
+        <div className="row">
+            <div className="col-lg-12">
+                {footer}
             </div>
         </div>
     </div>

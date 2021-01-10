@@ -1,11 +1,12 @@
 {
-  "name": "gatsby-developer-theme",
-  "version": "1.0.2",
+  "name": "gatsby-theme-developer",
+  "version": "1.0.3",
   "main": "index.js",
   "author": "Miguel Martín <miguelbemartin@gmail.com> (@miguelbemartin)",
   "license": "MIT",
   "keywords": [
     "gatsby",
+    "developer",
     "gatsby-plugin",
     "gatsby-theme",
     "blog"

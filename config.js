@@ -1,19 +1,19 @@
 module.exports = {
-    title: "Serenity 平静",
-    subtitle: "a minimal theme for your personal blog",
+    title: "Developer",
+    subtitle: "A minimal theme for your personal blog",
     description: "A minimal gatsby theme for your personal blog or webpage.",
-    site_url: "https://asiermarques.com",
+    site_url: "https://johnsmith.com",
     default_preview_image: "/og-default.png",
     author: {
-      name: "Asier Marqués",
+      name: "John Smith",
       bio: "Software Engineer",
-      url: "https://asiermarques.com",
+      url: "https://johnsmith.com",
       links: {
-          twitter: "https://twitter.com/asiermarques",
-          linkedin: "https://linkedin.com/in/asier",
-          github: "https://github.com/asiermarques",
-          instagram: "https://instagram.com/asiermarques",
-          mail: "mailto:asiermarques@gmail.com"
+          twitter: "https://twitter.com/johnsmith",
+          linkedin: "https://linkedin.com/in/johnsmith",
+          github: "https://github.com/johnsmith",
+          instagram: "https://instagram.com/johnsmith",
+          mail: "mailto:john.smith@email.com"
       }
     },
     links: [
@@ -24,10 +24,6 @@ module.exports = {
         {
             title: "About",
             href: "/about-me"
-        },
-        {
-            title: "Blog",
-            href: "/blog"
         },
     ],
     articles_per_page: 4,

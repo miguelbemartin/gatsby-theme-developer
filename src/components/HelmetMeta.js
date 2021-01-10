@@ -1,6 +1,6 @@
 import React from 'react';
 import useSiteMetadata from "../hooks/use-site-metadata";
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 
 export default ({ metaTitle, metaDescription, urlPath = "", coverImage = "" }) => {
         const { author,

@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout";
 import PageDetail from "../components/PageDetail";
-import Sidebar from "../components/Sidebar";
+import Header from "../components/Header";
 import useSiteMetadata from "../hooks/use-site-metadata";
 
 const PageTemplate = ({ data, location }) => {
@@ -15,19 +15,21 @@ const PageTemplate = ({ data, location }) => {
     } = useSiteMetadata();
 
     const page = data.markdownRemark.frontmatter;
+    
     const htmlContent = data.markdownRemark.html;
-    const sidebar = <Sidebar
+    
+    const header = <Header
         title={title}
         subtitle={subtitle}
         description={description}
         links={links}
-        author={author}
         location={location}/>
 
     const metaTitle = `${page.title} - ${title}`;
+    
 
     return <Layout
-        sidebar={sidebar}
+        header={header}
         metaTitle={metaTitle}
         metaDescription={page.description ? page.description : description}
         metaUrlPath={page.slug}
