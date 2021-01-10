@@ -1,7 +1,8 @@
-# Gatsby Developer Theme
-
+# Gatsby Minimal Theme for Developers
 
 ## Demo
+
+You can find here a demo website: https://www.miguelangelmartin.me
 
 
 ## Quick Start
@@ -55,7 +56,7 @@ module.exports = {
                    linkedin: "https://linkedin.com/in/username",
                    github: "https://github.com/username",
                    instagram: "https://instagram.com/username",
-                   mail: "mailto:username@gmail.com"
+                   mail: "mailto:username@email.com"
                }
            },
            links: [
@@ -65,7 +66,7 @@ module.exports = {
                },
                {
                    title: "About me",
-                   href: "/info/about-me"
+                   href: "/about-me"
                },
            ],
            articles_per_page: 4,
