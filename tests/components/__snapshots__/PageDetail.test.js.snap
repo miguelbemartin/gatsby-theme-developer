@@ -10,11 +10,19 @@ exports[`PageDetail component renders correctly 1`] = `
     </h1>
   </header>
   <section
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "<h2>test</h2><p>test world</p>",
-      }
-    }
-  />
+    className="row"
+  >
+    <div
+      className="col-lg-8 offset-lg-2"
+    >
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<h2>test</h2><p>test world</p>",
+          }
+        }
+      />
+    </div>
+  </section>
 </article>
 `;
