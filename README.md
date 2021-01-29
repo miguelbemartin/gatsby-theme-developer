@@ -45,8 +45,8 @@ module.exports = {
            title: "Title of your site",
            subtitle: "a short subtitle for the meta title on the home page",
            description: "A minimal theme for your personal blog or webpage",
-           siteUrl: "https://...com",
-           defaultPreviewImage: "/og-default.png",
+           site_url: "https://...com",
+           default_preview_image: "/og-default.png",
            author: {
                name: "Your Name",
                bio: "Software Engineer",

@@ -1,7 +1,6 @@
 import React from 'react';
-import { FaDivide } from 'react-icons/fa';
 
-export default ({ title, content, coverImage }) =>
+export default ({ title, content }) =>
     
     <article className={"page detail"}>
         <header>

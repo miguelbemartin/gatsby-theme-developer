@@ -10,7 +10,6 @@ const PageTemplate = ({ data, location }) => {
         title,
         subtitle,
         description,
-        author,
         links
     } = useSiteMetadata();
 
