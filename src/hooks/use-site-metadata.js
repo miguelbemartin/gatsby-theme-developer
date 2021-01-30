@@ -16,6 +16,7 @@ export default function useSiteMetadata() {
               name
               bio
               url
+              twitterUsername
               links {
                 twitter
                 linkedin 

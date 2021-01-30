@@ -4,7 +4,6 @@
 
 You can find here a demo website: https://www.miguelangelmartin.me
 
-
 ## Quick Start
 
 ```shell
@@ -20,11 +19,19 @@ You can add now the yarn scripts to your `package.json` file
 
 ```javascript
 {
-  "scripts": {
-    "build": "gatsby build",
-    "clean": "gatsby clean",
-    "develop": "gatsby develop"
-  }
+    "scripts"
+:
+    {
+        "build"
+    :
+        "gatsby build",
+            "clean"
+    :
+        "gatsby clean",
+            "develop"
+    :
+        "gatsby develop"
+    }
 }
 ```
 
@@ -38,42 +45,43 @@ And add the theme configuration to it:
 
 ```javascript
 module.exports = {
-  plugins: [
-    {
-      resolve: "gatsby-developer-theme",
-      options: {
-           title: "Title of your site",
-           subtitle: "a short subtitle for the meta title on the home page",
-           description: "A minimal theme for your personal blog or webpage",
-           site_url: "https://...com",
-           default_preview_image: "/og-default.png",
-           author: {
-               name: "Your Name",
-               bio: "Software Engineer",
-               url: "https://...com",
-               links: {
-                   twitter: "https://twitter.com/username",
-                   linkedin: "https://linkedin.com/in/username",
-                   github: "https://github.com/username",
-                   instagram: "https://instagram.com/username",
-                   mail: "mailto:username@email.com"
-               }
-           },
-           links: [
-               {
-                   title: "Articles",
-                   href: "/"
-               },
-               {
-                   title: "About me",
-                   href: "/about-me"
-               },
-           ],
-           articles_per_page: 4,
-           language: "en"
-       },
-    },
-  ],
+    plugins: [
+        {
+            resolve: "gatsby-developer-theme",
+            options: {
+                title: "Title of your site",
+                subtitle: "a short subtitle for the meta title on the home page",
+                description: "A minimal theme for your personal blog or webpage",
+                siteUrl: "https://...com",
+                defaultPreviewImage: "/og-default.png",
+                author: {
+                    name: "Your Name",
+                    bio: "Software Engineer",
+                    url: "https://mywebsite.com",
+                    twitterUsername: "@username",
+                    links: {
+                        twitter: "https://twitter.com/username",
+                        linkedin: "https://linkedin.com/in/username",
+                        github: "https://github.com/username",
+                        instagram: "https://instagram.com/username",
+                        mail: "mailto:username@email.com"
+                    }
+                },
+                links: [
+                    {
+                        title: "Articles",
+                        href: "/"
+                    },
+                    {
+                        title: "About me",
+                        href: "/about-me"
+                    },
+                ],
+                articlesPerPage: 4,
+                language: "en"
+            },
+        },
+    ],
 }
 ```
 
@@ -93,15 +101,10 @@ Every markdown file need to have a frontmatter section in it. Here is an example
 
 ```markdown
 ---
-date: 2020-11-20 00:30:03+00:00
-slug: /2020/hello-world/
-title: Hello World
-template: post
-coverImage: /the-image.jpg
-tags:
-  - Writing
-draft: false
-description: "This is your first article, you can find it in the /content directory"
+date: 2020-11-20 00:30:03+00:00 slug: /2020/hello-world/ title: Hello World template: post coverImage: /the-image.jpg tags:
+
+- Writing draft: false description: "This is your first article, you can find it in the /content directory"
+
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eu lorem eget metus venenatis dignissim.
