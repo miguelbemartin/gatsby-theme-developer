@@ -5,10 +5,10 @@ Array [
   <title
     data-react-helmet={true}
   >
-    The Title On The Meta
+    
   </title>,
   <meta
-    content="The Description on the meta"
+    content="The site description"
     data-react-helmet={true}
     name="description"
   />,
@@ -23,22 +23,19 @@ Array [
     property="og:type"
   />,
   <meta
-    content="The Title On The Meta"
     data-react-helmet={true}
     property="og:title"
   />,
   <meta
-    content="The Description on the meta"
     data-react-helmet={true}
     property="og:description"
   />,
   <meta
-    content="http://test.com/test"
     data-react-helmet={true}
     property="og:url"
   />,
   <meta
-    content="/image-custom.png"
+    content="/the-image.png"
     data-react-helmet={true}
     property="og:image"
   />,
@@ -52,9 +49,30 @@ Array [
     data-react-helmet={true}
     property="article:author"
   />,
+  <meta
+    content="summary"
+    data-react-helmet={true}
+    name="twitter:card"
+  />,
+  <meta
+    data-react-helmet={true}
+    name="twitter:site"
+  />,
+  <meta
+    data-react-helmet={true}
+    name="twitter:title"
+  />,
+  <meta
+    data-react-helmet={true}
+    name="twitter:description"
+  />,
+  <meta
+    content="/the-image.png"
+    data-react-helmet={true}
+    name="twitter:image"
+  />,
   <link
     data-react-helmet={true}
-    href="http://test.com/test"
     rel="canonical"
   />,
   <link
@@ -90,10 +108,10 @@ Array [
   <title
     data-react-helmet={true}
   >
-    The Title On The Meta
+    
   </title>,
   <meta
-    content="The Description on the meta"
+    content="The site description"
     data-react-helmet={true}
     name="description"
   />,
@@ -108,17 +126,14 @@ Array [
     property="og:type"
   />,
   <meta
-    content="The Title On The Meta"
     data-react-helmet={true}
     property="og:title"
   />,
   <meta
-    content="The Description on the meta"
     data-react-helmet={true}
     property="og:description"
   />,
   <meta
-    content="http://test.com"
     data-react-helmet={true}
     property="og:url"
   />,
@@ -137,9 +152,30 @@ Array [
     data-react-helmet={true}
     property="article:author"
   />,
+  <meta
+    content="summary"
+    data-react-helmet={true}
+    name="twitter:card"
+  />,
+  <meta
+    data-react-helmet={true}
+    name="twitter:site"
+  />,
+  <meta
+    data-react-helmet={true}
+    name="twitter:title"
+  />,
+  <meta
+    data-react-helmet={true}
+    name="twitter:description"
+  />,
+  <meta
+    content="/the-image.png"
+    data-react-helmet={true}
+    name="twitter:image"
+  />,
   <link
     data-react-helmet={true}
-    href="http://test.com"
     rel="canonical"
   />,
   <link
