@@ -5,16 +5,17 @@ module.exports = {
     site_url: "https://johnsmith.com",
     default_preview_image: "/og-default.png",
     author: {
-      name: "John Smith",
-      bio: "Software Engineer",
-      url: "https://johnsmith.com",
-      links: {
-          twitter: "https://twitter.com/johnsmith",
-          linkedin: "https://linkedin.com/in/johnsmith",
-          github: "https://github.com/johnsmith",
-          instagram: "https://instagram.com/johnsmith",
-          mail: "mailto:john.smith@email.com"
-      }
+        name: "John Smith",
+        bio: "Software Engineer",
+        url: "https://johnsmith.com",
+        twitter_username: "@johnsmith",
+        links: {
+            twitter: "https://twitter.com/johnsmith",
+            linkedin: "https://linkedin.com/in/johnsmith",
+            github: "https://github.com/johnsmith",
+            instagram: "https://instagram.com/johnsmith",
+            mail: "mailto:john.smith@email.com"
+        }
     },
     links: [
         {
