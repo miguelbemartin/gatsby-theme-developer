@@ -25,12 +25,6 @@ exports.createPages = async ({ graphql, actions }) => {
        }
     }`);
 
-    // Create homepage
-    createPage({
-        path: '/',
-        component: require.resolve('./src/templates/homepage.js')
-    });
-
     const {articlesPerPage} = result.data.site.siteMetadata;
 
     result.data.allMarkdownRemark.edges.forEach( edge => {

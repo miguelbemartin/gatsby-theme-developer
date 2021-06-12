@@ -24,8 +24,7 @@ const PageTemplate = ({ data, location }) => {
         links={links}
         location={location}/>
 
-    const metaTitle = `${page.title} - ${title}`;
-    
+    const metaTitle = `${page.title}`;
 
     return <Layout
         header={header}

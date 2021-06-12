@@ -24,7 +24,7 @@ const IndexTemplate = ({ data, location }) => {
 
     const article = data.markdownRemark.frontmatter;
     const htmlContent = data.markdownRemark.html
-    const metaTitle = `${article.title} - ${title}`;
+    const metaTitle = `${article.title}`;
 
     return <LayoutArticle
             header={header}
