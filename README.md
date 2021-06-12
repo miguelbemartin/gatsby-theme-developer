@@ -69,13 +69,17 @@ module.exports = {
                 },
                 links: [
                     {
-                        title: "Articles",
+                        title: "Home",
                         href: "/"
                     },
                     {
                         title: "About me",
                         href: "/about-me"
                     },
+                    {
+                    title: "Blog",
+                    href: "/blog"
+                    }
                 ],
                 articlesPerPage: 4,
                 language: "en"
