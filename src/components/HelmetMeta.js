@@ -12,7 +12,7 @@ export default ({metaTitle, metaDescription, urlPath = "", coverImage = ""}) => 
     } = useSiteMetadata();
 
     const canonicalUrl = urlPath ? `${siteUrl}${urlPath}` : siteUrl;
-    const previewImage = coverImage ? coverImage : defaultPreviewImage;
+    const previewImage = coverImage ? `${siteUrl}${coverImage}` : `${siteUrl}${defaultPreviewImage}`;
 
     return <Helmet>
         <title>{metaTitle}</title>

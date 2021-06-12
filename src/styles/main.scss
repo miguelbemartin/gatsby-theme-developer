@@ -69,8 +69,8 @@ $light: $gray-100;
 $dark: $gray-800;
 
 $font-family-monospace: 'Merriweather', serif;
-$font-family-sans-serif: 'Rubik', sans-serif;
-$font-size-base: 1.2rem;
+$font-family-sans-serif: 'Open+Sans', sans-serif;
+$font-size-base: 1.1rem;
 $headings-font-weight: 600;
 
 $spacer: 1rem;
@@ -92,3 +92,4 @@ $space: $spacer*5;
 @import "header";
 @import "detail";
 @import "list";
+@import "homepage";

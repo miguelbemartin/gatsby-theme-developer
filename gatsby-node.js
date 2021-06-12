@@ -25,6 +25,12 @@ exports.createPages = async ({ graphql, actions }) => {
        }
     }`);
 
+    // Create homepage
+    createPage({
+        path: '/',
+        component: require.resolve('./src/templates/homepage.js')
+    });
+
     const {articlesPerPage} = result.data.site.siteMetadata;
 
     result.data.allMarkdownRemark.edges.forEach( edge => {
@@ -52,7 +58,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const numPages = Math.ceil(result.data.allMarkdownRemark.totalCount / articlesPerPage);
     for (let i = 0; i < numPages; i += 1) {
         createPage({
-            path: i === 0 ? '/' : `/page/${i}`,
+            path: i === 0 ? '/blog' : `/blog/page/${i}`,
             component: require.resolve('./src/templates/article-archive.js'),
             context: {
                 currentPage: i,

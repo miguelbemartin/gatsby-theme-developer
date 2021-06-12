@@ -4,19 +4,30 @@ import LayoutArticle from "../components/LayoutArticle";
 import ArticleDetail from "../components/ArticleDetail";
 import useSiteMetadata from "../hooks/use-site-metadata";
 import Author from "../components/Author";
+import Header from "../components/Header";
 
-const IndexTemplate = ({ data }) => {
+const IndexTemplate = ({ data, location }) => {
     const {
         title,
+        subtitle,
         description,
+        links,
         author
     } = useSiteMetadata();
+
+    const header = <Header
+      title={title}
+      subtitle={subtitle}
+      description={description}
+      links={links}
+      location={location}/>
 
     const article = data.markdownRemark.frontmatter;
     const htmlContent = data.markdownRemark.html
     const metaTitle = `${article.title} - ${title}`;
 
     return <LayoutArticle
+            header={header}
             metaTitle={metaTitle}
             metaDescription={article.description ? article.description : description}
             metaUrlPath={article.slug}

@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'gatsby';
 import useStrings from "../hooks/use-strings";
 
-
 export default ({prevPagePath, nextPagePath, hasNextPage, hasPrevPage}) => {
     const strings = useStrings();
     return <div className={"pagination row"}>

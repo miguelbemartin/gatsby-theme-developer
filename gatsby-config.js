@@ -91,7 +91,7 @@ module.exports = themeOptions => {
                 resolve: `gatsby-plugin-google-fonts`,
                 options: {
                     fonts: [
-                        'Rubik\:300,400,500,600,700',
+                        'Open+Sans\:300,400,500,600,700',
                         'Merriweather'
                     ],
                     display: 'swap'
