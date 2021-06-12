@@ -38,7 +38,7 @@ Array [
     property="og:url"
   />,
   <meta
-    content="/image-custom.png"
+    content="http://test.com/image-custom.png"
     data-react-helmet={true}
     property="og:image"
   />,
@@ -72,7 +72,7 @@ Array [
     name="twitter:description"
   />,
   <meta
-    content="/image-custom.png"
+    content="http://test.com/image-custom.png"
     data-react-helmet={true}
     name="twitter:image"
   />,
@@ -147,6 +147,7 @@ Array [
     property="og:url"
   />,
   <meta
+    content="http://test.comundefined"
     data-react-helmet={true}
     property="og:image"
   />,
@@ -180,6 +181,7 @@ Array [
     name="twitter:description"
   />,
   <meta
+    content="http://test.comundefined"
     data-react-helmet={true}
     name="twitter:image"
   />,
