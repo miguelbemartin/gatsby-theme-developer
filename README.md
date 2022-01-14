@@ -17,21 +17,13 @@ yarn add gatsby react react-dom gatsby-developer-theme
 
 You can add now the yarn scripts to your `package.json` file
 
-```javascript
+```json
 {
-    "scripts"
-:
-    {
-        "build"
-    :
-        "gatsby build",
-            "clean"
-    :
-        "gatsby clean",
-            "develop"
-    :
-        "gatsby develop"
-    }
+  "scripts": {
+    "build": "gatsby build", 
+    "clean": "gatsby clean",
+    "develop": "gatsby develop"
+  }
 }
 ```
 
@@ -47,7 +39,7 @@ And add the theme configuration to it:
 module.exports = {
     plugins: [
         {
-            resolve: "gatsby-developer-theme",
+            resolve: "gatsby-theme-developer",
             options: {
                 title: "Title of your site",
                 subtitle: "a short subtitle for the meta title on the home page",
@@ -92,7 +84,7 @@ module.exports = {
 That's it, you can now run your gatsby site using
 
 ```shell
-yarn develop
+yarn gatsby develop
 ```
 
 This will run a local web server and create the `content` and `static` folders with all the required files to run your website.
