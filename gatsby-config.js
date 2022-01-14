@@ -92,7 +92,7 @@ module.exports = themeOptions => {
                 options: {
                     fonts: [
                         'Open+Sans\:300,400,500,600,700',
-                        'Merriweather'
+                        'Nunito'
                     ],
                     display: 'swap'
                 }

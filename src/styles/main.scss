@@ -68,7 +68,7 @@ $danger: $red;
 $light: $gray-100;
 $dark: $gray-800;
 
-$font-family-monospace: 'Merriweather', serif;
+$font-family-monospace: 'Nunito', serif;
 $font-family-sans-serif: 'Open+Sans', sans-serif;
 $font-size-base: 1.1rem;
 $headings-font-weight: 600;
@@ -88,7 +88,6 @@ $space: $spacer*5;
 
 @import "~bootstrap/scss/bootstrap";
 @import "author";
-@import "sidebar";
 @import "header";
 @import "detail";
 @import "list";

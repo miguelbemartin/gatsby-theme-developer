@@ -2,10 +2,19 @@ header{
     padding-top: 20px;
     a{
         color: $black;
+        &:hover {
+            color: $black;
+            text-decoration: underline;
+        }
         h1{
             font-size: $font-size-base*1.2;
+            float:left;
         }
       }
+    h2{
+        float:right;
+
+    }
     .navbar{
         padding: 0;
     }

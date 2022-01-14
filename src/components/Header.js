@@ -4,7 +4,7 @@ import useIsCurrentPage from "../hooks/use-is-current-page";
 
 export default ({ title, subtitle, description, links, author, location }) => {
   return <header>
-    <nav className="navbar navbar-expand-lg ">
+    <nav className="navbar navbar-expand-lg">
       <Link to={"/"} title={title}>
         <h1>{title}</h1>
       </Link>
