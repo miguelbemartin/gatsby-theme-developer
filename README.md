@@ -12,7 +12,7 @@ cd my-site
 yarn init
 
 # install gatsby-developer-theme and it's dependencies
-yarn add gatsby react react-dom gatsby-developer-theme
+yarn add gatsby react react-dom gatsby-theme-developer
 ```
 
 You can add now the yarn scripts to your `package.json` file
