@@ -88,6 +88,7 @@ $headings-margin-bottom: math.div($paragraph-margin-bottom,2);
 $space: $spacer*5;
 
 @import "~bootstrap/scss/bootstrap";
+@import "common";
 @import "author";
 @import "header";
 @import "detail";

@@ -13,7 +13,7 @@ aside {
     color: $black;
   }
   header a:hover{
-    text-decoration: none;
+    text-decoration: underline;
   }
   p{
     margin: 0 0 $paragraph-margin-bottom/3 0;

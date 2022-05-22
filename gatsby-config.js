@@ -11,6 +11,7 @@ module.exports = themeOptions => {
             description: config.description,
             language: config.language,
             siteUrl: config.siteUrl,
+            icon: config.icon,
             defaultPreviewImage: config.defaultPreviewImage,
             articlesPerPage: config.articlesPerPage,
             author: config.author,
