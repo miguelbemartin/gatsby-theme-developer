@@ -49,8 +49,7 @@ module.exports = {
                 author: {
                     name: "Your Name",
                     bio: "Software Engineer",
-                    url: "https://mywebsite.com",
-                    twitterUsername: "@username",
+                    avatar: "https://mywebsite.com",
                     links: {
                         twitter: "https://twitter.com/username",
                         linkedin: "https://linkedin.com/in/username",

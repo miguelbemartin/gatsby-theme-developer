@@ -7,7 +7,7 @@ module.exports = {
     author: {
         name: "John Smith",
         bio: "Software Engineer",
-        twitterUsername: "@johnsmith",
+        avatar: "",
         links: {
             twitter: "https://twitter.com/johnsmith",
             linkedin: "https://linkedin.com/in/johnsmith",
