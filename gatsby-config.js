@@ -90,7 +90,7 @@ module.exports = themeOptions => {
                 resolve: `gatsby-plugin-google-fonts`,
                 options: {
                     fonts: [
-                        'Open+Sans\:300,400,500,600,700',
+                        'Oxygen\:300,400,900',
                         'Nunito'
                     ],
                     display: 'swap'

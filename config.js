@@ -7,7 +7,6 @@ module.exports = {
     author: {
         name: "John Smith",
         bio: "Software Engineer",
-        url: "https://johnsmith.com",
         twitterUsername: "@johnsmith",
         links: {
             twitter: "https://twitter.com/johnsmith",
