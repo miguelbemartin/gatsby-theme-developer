@@ -1,41 +1,52 @@
-.article-list{
-  article{
+.article-list {
+  article {
     margin: $space 0;
-    a{
+
+    a {
       text-decoration: none;
-      .date{
+
+      .date {
         color: $gray-600
       }
-      h2{
+
+      h2 {
         color: $black;
       }
+
       p {
         color: $gray-600;
       }
-      .cover{
+
+      .cover {
         height: $space*3;
-        margin: math.div($space,6) 0 math.div($space,3) 0;
+        margin: math.div($space, 6) 0 math.div($space, 3) 0;
         background-color: $gray-800;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: 50% 50%;
       }
     }
-    a:hover{
+
+    a:hover {
       text-decoration: none;
-      h2{
+
+      h2 {
         text-decoration: underline;
       }
     }
   }
+
   .pagination {
     margin-bottom: $space;
-    a{
+
+    a {
       color: $black;
     }
-    .next{
+
+    .next {
       text-align: right;
     }
+
     .disabled {
       display: none;
     }

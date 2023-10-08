@@ -1,8 +1,8 @@
 import React from "react";
-import { Link } from "gatsby";
+import {Link} from "gatsby";
 import useIsCurrentPage from "../hooks/use-is-current-page";
 
-export default ({ title, links, location }) => {
+export default ({title, links, location}) => {
   return <header>
     <nav className="navbar navbar-expand-lg">
       <Link to={"/"} title={title}>

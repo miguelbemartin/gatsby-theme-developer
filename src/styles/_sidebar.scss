@@ -3,34 +3,43 @@ aside {
   @include media-breakpoint-up(lg) {
     margin: $space 0;
   }
-  header a{
+
+  header a {
     color: $black;
-    h1{
+
+    h1 {
       font-size: $font-size-base*1.2;
     }
   }
-  .nav a:hover, header a:hover{
+
+  .nav a:hover, header a:hover {
     color: $black;
   }
-  header a:hover{
+
+  header a:hover {
     text-decoration: underline;
   }
-  p{
+
+  p {
     margin: 0 0 $paragraph-margin-bottom/3 0;
     color: $gray-600;
   }
-  p, .nav{
+
+  p, .nav {
     font-size: $font-size-base*0.8;
   }
-  .nav{
-    li{
+
+  .nav {
+    li {
       margin-bottom: $paragraph-margin-bottom/3;
-      a.nav-link{
+
+      a.nav-link {
         color: $black;
         padding: 0;
         display: inline-block;
       }
-      a.active{
+
+      a.active {
         border-bottom: 1px solid $black;
       }
     }

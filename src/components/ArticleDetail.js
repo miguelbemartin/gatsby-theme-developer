@@ -1,22 +1,22 @@
 import React from 'react';
 import useFormattedDate from "../hooks/use-formatted-date";
 
-export default ({ title, date, content, coverImage="", coverImageCaption="" }) => {
-    const formattedDate = useFormattedDate(date, "MMMM Do, YYYY");
-    
-    return <article className={"article detail"}>
-        <header>
-            <h1>{title}</h1>
-            <time pubdate={"yes"} dateTime={date}>{formattedDate}</time>
-        </header>
+export default ({title, date, content, coverImage = "", coverImageCaption = ""}) => {
+  const formattedDate = useFormattedDate(date, "MMMM Do, YYYY");
 
-        {coverImage && <figure className={"cover"}>
-            <img src={coverImage} alt={title}/>
-            {coverImageCaption && <figcaption dangerouslySetInnerHTML={{__html: coverImageCaption}}></figcaption>}
-        </figure>}
+  return <article className={"article detail"}>
+    <header>
+      <h1>{title}</h1>
+      <time pubdate={"yes"} dateTime={date}>{formattedDate}</time>
+    </header>
 
-        <section dangerouslySetInnerHTML={{__html: content}}/>
+    {coverImage && <figure className={"cover"}>
+      <img src={coverImage} alt={title}/>
+      {coverImageCaption && <figcaption dangerouslySetInnerHTML={{__html: coverImageCaption}}></figcaption>}
+    </figure>}
 
-    </article>
+    <section dangerouslySetInnerHTML={{__html: content}}/>
+
+  </article>
 }
 
