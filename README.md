@@ -96,10 +96,14 @@ Every markdown file need to have a frontmatter section in it. Here is an example
 
 ```markdown
 ---
-date: 2020-11-20 00:30:03+00:00 slug: /2020/hello-world/ title: Hello World template: post coverImage: /the-image.jpg tags:
-
-- Writing draft: false description: "This is your first article, you can find it in the /content directory"
-
+date: 2020-11-20 00:30:03+00:00
+slug: /2020/hello-world/
+title: Hello World
+template: post
+coverImage: /the-image.jpg
+tags: Writing
+draft: false
+description: "This is your first article, you can find it in the /content directory"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eu lorem eget metus venenatis dignissim.
