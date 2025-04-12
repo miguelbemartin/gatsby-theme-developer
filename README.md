@@ -1,5 +1,7 @@
 # Gatsby Minimal Theme for Developers
 
+A Gatsby theme for developers, it is a minimal theme to create your personal blog or webpage.
+
 ## Demo
 
 You can find here a demo website: https://www.miguelangelmartin.me
