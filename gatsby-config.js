@@ -149,6 +149,7 @@ module.exports = themeOptions => {
                             `,
                             output: "/rss.xml",
                             title: `${config.title} RSS Feed`,
+                            site_url: `${config.siteUrl}`,
                         },
                     ],
                 },
