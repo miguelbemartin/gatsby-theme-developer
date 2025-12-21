@@ -1,6 +1,6 @@
 on: push
 
-jpermissions:
+permissions:
   id-token: write  # Required for OIDC
   contents: read
 
