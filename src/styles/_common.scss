@@ -1,5 +1,13 @@
 a {
   color: $gray-900;
   text-decoration: underline;
-  background-color: transparent;
+  &:hover {
+    text-decoration: underline;
+    color: $green;
+  }
+
+}
+
+.nav-link:hover, .nav-link:focus {
+  color: $green;
 }
