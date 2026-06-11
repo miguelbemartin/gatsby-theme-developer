@@ -2,6 +2,8 @@
 
 A Gatsby theme for developers, it is a minimal theme to create your personal blog or webpage.
 
+https://www.npmjs.com/package/gatsby-theme-developer
+
 ## Demo
 
 You can find here a demo website: https://www.miguelangelmartin.me
