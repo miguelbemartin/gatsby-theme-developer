@@ -11,10 +11,14 @@
 
 section.author {
   font-size: math.div($font-size-base, 1.2);
-  padding: math.div($space, 4);
+  padding: math.div($space, 2);
   background: $gray-100;
   border: 1px solid $gray-200;
   margin: 0 0 $space*1.5 0;
+
+  p {
+    margin-bottom: 0;
+  }
 
   h2 {
     font-size: $font-size-base*1.2;
